@@ -1,0 +1,125 @@
+<div class="vLine">
+  <mat-spinner
+  *ngIf="signupSpinner"
+  mode="indeterminate"
+  class="custom-spinner"
+></mat-spinner>
+    <div>
+
+      <div>
+        <div class="signup-head">{{ "Sign Up" }}</div>
+        <div class="flex-column">
+          <form  #signupForm="ngForm">
+            <div class="fade-header">
+              <span>{{ "Create New Account" }}</span>
+            </div>
+
+            <div>
+              <input
+                matInput
+                autocomplete="off"
+                [(ngModel)]="userName"
+                name="userName"
+                placeholder="{{ 'Enter Name' }} "
+                id="name"
+                required
+              />
+            </div>
+            <!-- [disabled]="authState.user.onBoardingType == 'google'" -->
+            <div>
+              <input
+                matInput
+                autocomplete="off"
+                [(ngModel)]="userEmail"
+                name="userEmail"
+                placeholder="{{ 'Enter Email' }} "
+                id="email"
+                required
+              />
+            </div>
+            <!-- [disabled]="authState.user.onBoardingType == 'google'" -->
+            <div
+              style="
+                display: flex;
+                border: 1px solid lightgrey;
+                position: relative;
+                margin-bottom: 0.25rem;
+              "
+            >
+              <img
+                style="height: 0.75rem; margin: 0.75rem;"
+                src="../../../../assets/images/indianFlag.png"
+                alt="Avatar"
+              />
+              <label
+                style="display: grid; align-content: center; font-size: 0.85rem;"
+                >+91</label
+              >
+              <input
+                type="number"
+                min="0"
+                matInput
+                [(ngModel)]="userMobileNumber"
+                onkeydown="if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;"
+                pattern="[0-9]{10}"
+                placeholder="{{ 'Enter Mobile Number' }} "
+                name="mobileNo"
+                id="mobileNo"
+                required
+              />
+
+            </div>
+          </form>
+          <form (ngSubmit)="onSignup()" #logiForm="ngForm">
+            <div class="flex-row" style="margin-bottom: 5px;">
+              <input
+                autocomplete="off"
+                matInput
+                [(ngModel)]="password"
+                placeholder="{{ 'Enter password' }} "
+                id="otp"
+                name="OTP"
+                required
+              />
+            </div>
+            <div style="float: right; width: 100%; margin-bottom: 15px;">
+              <button
+                style="width: 100%;"
+                name="login"
+                matTooltip="{{ 'Login' }}"
+                type="submit"
+                color="primary"
+                class="button-text"
+                mat-raised-button
+                [disabled]="!logiForm.form.valid || userMobileNumber == null"
+              >
+                <b style="color: white;"> {{ "Sign Up" }} </b>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- -->
+  
+    <mat-card
+      style="
+        background-color: rgb(226, 226, 226);
+        text-align: center;
+        padding-top: 0.75rem;
+        padding-bottom: 0.25rem;
+      "
+    >
+      <b style="color: #959595;">{{ "Already have an account?" }}</b>
+      <button
+        mat-button
+        type="reset"
+        (click)="onCancel()"
+        style="text-decoration: underline;"
+        color="primary"
+      >
+        <b>{{ "Login" }}</b>
+      </button>
+    </mat-card>
+  </div>
+  

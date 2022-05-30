@@ -1,0 +1,102 @@
+.share-info-header {
+    height: 40px;
+    background: #efefef;
+    padding: 0px 15px;
+  }
+  
+  
+  .clear-btn {
+    height: 32px;
+    line-height: 32px;
+    width: 32px;
+  }
+
+  .footer{
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .clear-btn-icon {
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+  }
+
+  .email{
+    background: black;
+    color: white;
+    padding: 4px;
+    border-radius: 10%;
+    font-weight: 500;
+  }
+  
+  .container {
+    padding-top: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    height: calc(100vh - 320px);
+  }
+  
+  .body-container {
+    min-height: 294px;
+    min-width: 420px;
+    transition: margin-left 300ms ease-out, transform 300ms ease-out;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .info-container {
+    background: #f5f7fa;
+    border: 1px solid #dfe3e6;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 3px 9px 3px 7px;
+    flex-wrap: wrap;
+  }
+  
+  .chip {
+    height: 20px;
+    border: 0.5px solid #ade1cd;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 3px 7px 0px 0px;
+    padding: 0px 7px;
+  }
+  
+  .chip-icon {
+    font-size:13px;
+    height: 12px;
+    width: 12px;
+    line-height: 12px;
+  }
+  
+  .disable-btn {
+    background: gainsboro !important;
+    color: white !important;
+    cursor: not-allowed !important ;
+  }
+
+  .input-box {
+    box-sizing: border-box;
+    background: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 650px) {
+  
+    .body-container {
+      min-width: 328px;
+      padding: 0px 10px;
+    } 
+ 
+  }
+  

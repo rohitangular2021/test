@@ -1,0 +1,17 @@
+.cont {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.head {
+  text-align: center;
+  overflow: hidden;
+}
+
+.headid{
+  text-align: left;
+  overflow: hidden;
+}

@@ -1,0 +1,96 @@
+.dasbord-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    position: relative;
+    border: 1px solid #e6e8e9;
+    margin: 5px;
+}
+.dsc {
+ display: flex;
+ flex-direction: row;
+ /* flex-wrap: wrap; */
+ justify-content: space-around;
+ 
+}
+
+.heading {
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dsc > div {
+    width: 36vw;
+    /* height: 260px; */
+    box-shadow: 0 0 4px rgba(0,0,0,.23);
+    margin: 10px;
+    border-radius: 5px
+}
+
+.efp {
+    flex: 1 1 30%;
+    box-shadow: 0 0 4px rgba(0,0,0,.23);
+    margin: 5px;
+    height: 74px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pod-p {
+    box-shadow: 0 0 4px rgba(0,0,0,.23);
+    height: 70px;
+    text-align: center;
+    border-radius: 5px;
+    margin:7px;
+    cursor: pointer;
+}
+.vap {
+    box-shadow: 0 0 4px rgba(0,0,0,.23);
+    height: 74px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.auction-container {
+    margin:10px;
+    box-shadow: 0 0 11px rgba(0,0,0,.23);
+}
+
+.auction-status {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ac {
+    flex: 1 1 30%;
+    box-shadow: 0 0 4px rgba(0,0,0,.23);
+    height: 83px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+.pickup {
+    line-height: 18px;
+    padding-top: 10px;
+    color: #5a6872;
+    font-size: 15px;
+}
+
+.responded {
+    margin-top:16px;
+    font-size: 15px;
+}
+
+.vlr {
+    color: white;
+    width: fit-content;
+    background-color: #03a9f4;
+    padding: 10px;
+    border-radius: 8px 10px;
+    margin-left: 20px;
+}

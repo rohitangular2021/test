@@ -1,0 +1,114 @@
+<div class="container">
+    <form #someForm="ngForm"  (ngSubmit)="onSubmit(someForm.value)" class="example-form">
+  <div class="header df ai">
+    <div class="left-head df ai">
+      <span class="cp" style="font-size: large;" (click)="goback()">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </span>
+    </div>
+    <div class="right-head">
+      <button mat-button class="btn" type="submit" disabled>save</button>
+    </div>
+  </div>
+  
+  <div class="edit-form">
+    <div class="df sectionpro">
+      <div class="img-section" style="width: 32%;">
+        <div>
+          <span>Upload Image * :</span>
+        </div>
+        <div>
+          <div class="upload-logo" *ngIf="!this.student?.photo" 
+          style="align-items: center;display: flex;cursor: pointer;"
+            (click)="triggerFileInput()">
+            <span>
+              <mat-icon style="color:#5A6872;font-size:2.2rem;height: 2.2rem;width: 2.2rem;">photo</mat-icon>
+            </span>
+            <span style="font-size: 12px;color: #5A6872;">Click Here to upload the Student Photo
+            </span>
+          </div>
+          <div class="center" *ngIf="this.student?.photo" (click)="triggerFileInput()" style="cursor: pointer">
+            <img [src]="!imageUrl? this.student?.photo:imageUrl" class="logo" />
+          </div>
+          <input #changeLogo type="file"  style="display: none;" accept=".png, .jpg, .jpeg"
+            (change)="fileChangeEvent($event)" />
+        </div>
+      </div>
+      <div style="width: 70%;">
+        <div class="section1">
+          <span> Name * :</span>
+          <input type="text" [(ngModel)]="student.name" placeholder="Name" matInput name="name" class="input" />
+        </div>
+        <div class="section1">
+          <span>Mother Name * :</span>
+          <input type="text" name="motherName" [(ngModel)]="student.motherName" matInput placeholder="Father's Name" class="input" />
+        </div>
+        <div class="section1">
+          <span>Father Name * :</span>
+          <input type="text" name="fatherName" [(ngModel)]="student.fatherName" matInput placeholder="Father's Name"  class="input" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sectionpro df">
+      <div class="section" style="width: 31%;">
+        <div><span>Email * :</span></div>
+        <input type="text" name="email" matInput [(ngModel)]="student.email" placeholder="Email" class="input" />
+      </div>
+      <div class="section" style="width: 31%;">
+        <div><span>Phone * :</span></div>
+        <input name="phone" matInput placeholder="Phone" [(ngModel)]="student.phone"autocomplete="off" [minLength]="10"
+        [maxLength]="10" (keypress)="numbersOnly($event)" class="input">
+      </div>
+      <div class="section" style="width: 31%;">
+        <div><span>Address * :</span></div>
+        <input type="text" class="input" name="address" [(ngModel)]="student.address" matInput placeholder="Address" />
+      </div>
+    </div>
+
+    <div class="sectionpro df">
+     
+      <div class="section" style="width: 31%;">
+        <div><span>Class Teacher * :</span></div>
+        <input type="text" class="input" name="classTeacher" [(ngModel)]="student.classTeacher" matInput placeholder="Class Teacher"  />
+      </div>
+
+      <div class="section" style="width: 31%;">
+        <div><span>D.O.B * :</span></div>
+        <input type="text" name="dob"  [(ngModel)]="student.dob"class="input" />
+      </div>
+        <div class="section" style="width: 31%;">
+            <mat-form-field style="width: 100%;"  value="selectedValues">
+              <mat-label>Subjects * :</mat-label>
+              <mat-select multiple name="subjects" [(ngModel)]="student.subjects" (ngModelChange)="student.subjects" >
+                <mat-option *ngFor="let subject of subjects" [value]="subject.value">
+                  {{subject.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="sectionpro df">
+     <div class="section" style="width: 31%;">
+        <div> <span>Gender * : </span></div>
+        <mat-radio-group color="primary"[(ngModel)]="student.gender"  name="gender" aria-label="Select an option">
+          <mat-radio-button class="pc" value="male">Male</mat-radio-button>
+          <mat-radio-button class="pc" value="female">Female</mat-radio-button>
+          <mat-radio-button class="pc" value="other">Others</mat-radio-button>
+        </mat-radio-group>
+     </div>
+     <div class="section" style="width: 31%;">
+        <div><span>Nationality * : </span></div>
+        <mat-radio-group color="primary" [(ngModel)]="student.nationality" name="nationality" aria-label="Select an option">
+          <mat-radio-button class="pc" value="indian">Indian</mat-radio-button>
+          <mat-radio-button class="pc" value="other">Other</mat-radio-button>
+        </mat-radio-group>
+     </div>
+     
+    </div>
+
+  </div>
+</form>
+</div>

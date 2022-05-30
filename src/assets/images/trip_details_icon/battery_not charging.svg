@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>battery_charging_full - material</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="REVAMP-FILES" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-15" transform="translate(-13.000000, 0.000000)" fill="#7D7D7D">
+            <path d="M21.04,2.32 C21.3600016,2.32 21.6299989,2.4299989 21.85,2.65 C22.0700011,2.8700011 22.18,3.1399984 22.18,3.46 L22.18,16.22 C22.18,16.5400016 22.0700011,16.8033323 21.85,17.01 C21.6299989,17.2166677 21.3600016,17.32 21.04,17.32 L14.96,17.32 C14.6399984,17.32 14.3700011,17.2166677 14.15,17.01 C13.9299989,16.8033323 13.82,16.5400016 13.82,16.22 L13.82,3.46 C13.82,3.1399984 13.9299989,2.8700011 14.15,2.65 C14.3700011,2.4299989 14.6399984,2.32 14.96,2.32 L16.32,2.32 L16.32,0.68 L19.68,0.68 L19.68,2.32 L21.04,2.32 Z" id="battery_charging_full---material"></path>
+        </g>
+    </g>
+</svg>

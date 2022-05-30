@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="header">
+    <div class="leftheader df ai">
+      <div class="df ai">
+        <span style="font-weight: 900;font-size: 20px">Users</span>
+        <button mat-icon-button class="create-new" (click)="addUser()" matTooltip="Add new user">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <span class="pc" style="font-size: 12px;margin-left: 20px;">
+        {{users?.length}} Order out of {{users?.length}}</span>
+      <div class="user-search">
+        <input #search type="text" 
+        class="usersearch" 
+        [(ngModel)]="searchKey" 
+        placeholder="Search User Name"/>
+        <span>
+          <button *ngIf="searchKey==''" matSuffix mat-icon-button style="right: 36px;">
+            <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;">search</mat-icon>
+          </button>
+        </span>
+        <span>
+          <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" style="right: 36px;">
+            <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;" (click)="clearSearch()">clear</mat-icon>
+          </button>
+        </span>
+      </div>
+
+      <div>
+        <button *ngIf="!(selectedUsers.length < 2)" (click)="confirmDialog()" class="pc" mat-icon-button>
+          <mat-icon>delete</mat-icon> {{selectedUsers?.length}}/{{users?.length}}
+        </button>
+      </div>
+    </div>
+    <div class="rightheader df ai">
+      <div>
+        <button mat-icon-button class="pc" (click)="downloadOrShareReports()">
+          <mat-icon class="cp">download</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="cp">settings</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <mat-progress-bar
+  *ngIf="isSpinner"
+  style="height: 3px; z-index: 10"
+  mode="query"
+></mat-progress-bar>
+  <div class="content" style="padding-left: 10px;">
+    <div class="heading">
+      <div class="headid" style="flex: 1 1 10%;">
+        <span>USER NAME</span>
+      </div>
+      <div class="head" style="flex: 1 1 15%;">
+        <span>ID</span>
+      </div>
+      <div class="head" style="flex: 1 1 15%">
+        <span>Email</span></div>
+      <div class="head" style="flex: 1 1 15%;">
+        <span>Phone</span></div>
+      <div class="head" style="flex: 1 1 15%">
+        <span>Address</span></div>
+      <div class="head" *ngIf="(selectedUsers.length < 2)" style="flex: 1 1 15%;">
+        <span>Action</span></div>
+    </div>
+    <div class="items" *ngFor="let item of users | searchUser : searchKey; trackBy: trackByFn
+  ">
+      <app-user-item [userdata]="item"
+      [selectedUsers]="selectedUsers"
+      (checked)="userChecked($event)"
+      (users)="loadUsers($event)"
+      ></app-user-item>
+    </div>
+  </div>
+
+</div>

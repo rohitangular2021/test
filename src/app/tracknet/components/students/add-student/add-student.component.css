@@ -1,0 +1,120 @@
+.container{
+    height: 90vh;
+    width: 80vw;
+}
+
+.header{
+    height: 10%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 0px 10px 0px 0px;
+    border-bottom: 1px solid;
+    box-shadow: 2px 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  
+  .form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .form-element {
+    padding: 5px 0px 15px 2px;
+    width: 100%;
+  }
+  
+  .button {
+    width: 100%;
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+
+  .check-section{
+    width: 50%;
+    display: grid;
+    row-gap: 10%;
+  }
+
+  .img-section{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+  }
+
+
+
+.footer{
+    height: 7%;
+    position: relative;
+    justify-content: end;
+    bottom: 0;
+    right: 20px;
+    padding-bottom: 30px;
+  }
+
+
+  .imgcontainer {
+    position: relative;
+  }
+
+  .upload-logo{
+    height: 4rem;
+    width: 12rem;
+    padding: 0.5rem;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.5);
+    border: 2px dashed #8C9BA5;
+    box-sizing: border-box;
+}
+
+.logo
+{   max-width: 10rem;
+    max-height: 4rem;
+    padding :3px
+}
+
+.centerCsv{
+  padding: 15px;
+}
+
+.uploadCsv{
+  width: 97%;
+  height:200px;
+  text-align: -webkit-center;
+  margin: 0px 10px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  
+}
+  

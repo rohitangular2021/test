@@ -1,0 +1,150 @@
+.df {
+  display: flex;
+}
+
+.ai {
+  align-items: center;
+}
+
+.elf {
+  font-size: 20px;
+}
+
+.jc {
+  justify-content: space-between;
+}
+.jcc {
+  justify-content: center;
+}
+
+.xlf {
+  font-size: 18px;
+}
+.lf {
+  font-size: 16px;
+}
+
+.mf {
+  font-size: 14px;
+}
+
+.sf {
+  font-size: 12px;
+}
+.esf {
+  font-size: 10px;
+}
+
+.dt {
+  color: #152935;
+}
+
+.mt{
+  color: #5A6872;
+}
+
+.gt {
+  color: #969696;
+}
+.ht {
+  color: #333f43;
+}
+
+.ho {
+  opacity: 0.6;
+}
+
+.pc {
+  color: #0086da;
+}
+.rpc{
+  color: #E71D32;
+}
+
+.fw {
+  font-weight: 500;
+}
+
+.tb {
+  background: transparent !important;
+}
+
+.cp {
+  cursor: pointer;
+}
+ 
+.not-excced-txt {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+  color: #E71D32;
+}
+.bbc{
+  border-bottom: 1px solid #e9e9e9;
+}
+.bc{
+  border: 1px solid #e9e9e9;
+}
+
+.et{
+  font-style: italic;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.fdc{
+  flex-direction: column;
+}
+
+.active-button {
+  background-color: #0086da;
+  color: white;
+  font-size: 16px;
+  line-height: 35px;
+  pointer-events: all;
+  min-width: 6rem;
+  max-width: fit-content;
+}
+.disable-button {
+  background-color: rgb(218, 213, 213);
+  color: #152935 !important;
+  font-size: 16px;
+  line-height: 35px;
+  pointer-events: none;
+  min-width: 6rem;
+  max-width: fit-content;
+}
+.action {
+  display: flex;
+  cursor: pointer;
+  color: #0086da;
+  font-size: 16px;
+  font-weight: 500;
+}
+.delete {
+  background-color: #e71d32 !important;
+}
+.no-wrap{
+  white-space: nowrap;
+}
+
+.readOnly{
+  pointer-events: none;
+}
+
+.my-div-icon{
+  /* background-image: url('../../fretron-one-ui/src/assets/Icons/marker-icon.png'); */
+  background-image: url('../src/assets/Icons/marker-icon.png');
+  text-align:center;
+  color:solid black; 
+  font-size: 14px;  
+  width: 50%;
+  height: 50%;
+}

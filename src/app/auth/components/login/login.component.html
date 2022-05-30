@@ -1,0 +1,216 @@
+  <div class="vLine">
+    <div>
+      <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+        <span style="font-size: 1.5rem; font-weight: bold;">{{ "Login" }}</span>
+        <div style="margin-left: auto;">
+          <mat-button-toggle-group
+            [(ngModel)]="selection"
+            style="font-size: 0.75rem; height: 2rem;border: 1px solid black;"         >
+            <mat-button-toggle class="pc" value="password">
+              {{ "OTP" }}
+            </mat-button-toggle>
+            <mat-button-toggle class="pc" value="password">
+              {{ "Password" }}
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+      <!-- otp login view -->
+      <div
+        *ngIf="selection == 'otp'"
+        style="display: flex; flex-direction: column; padding-top: 1.8rem;"
+      >
+        <div style="text-align: center; margin-bottom: 8px;">
+          <span *ngIf="timer$ | async as tick" class="sub-header-text">
+            <b>Resend OTP in Next</b>- {{ tick }} sec</span
+          >
+        </div>
+        <form  #sendOtp="ngForm">
+          <div
+            style="
+              display: flex;
+              border: 1px solid lightgrey;
+              margin-bottom: 5px;
+              position: relative;
+              height: 36px;
+            "
+          >
+            <img
+              style="height: 0.75rem; margin: 0.81rem;"
+              src="../../../../assets/images/indianFlag.png"
+              alt="Avatar"
+            />
+            <label style="align-content: center; display: grid;">+91</label>
+            <input
+              type="number"
+              min="0"
+              id="mobileNo"
+              #mobileNo
+              [(ngModel)]="mobileNumber"
+              (keyup)="logMobileNoEntered(mobileNo.value)"
+              [disabled]="(timer$ | async) > 0 && (timer$ | async) < 180"
+              onkeydown="if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;"
+              pattern="[0-9]{10}"
+              placeholder="{{ 'Mobile Number' }}"
+              name="mobileNumber"
+              required
+            />
+  
+            <button
+              name="go"
+              id="otpButton"
+              type="submit"
+              style="background: none"
+              color="primary"
+              mat-button
+              [disabled]="
+                !sendOtp.form.valid ||
+                ((timer$ | async) > 0 && (timer$ | async) < 180)
+              "
+            >
+              <b>{{ (timer$ | async) !== 0 ? "Send OTP" : "Resend OTP" }}</b>
+            </button>
+          </div>
+        </form>
+  
+        <form  #loginForm="ngForm">
+          <div style="width: 100%; margin-bottom: 5px;">
+            <input
+              autocomplete="off"
+              matInput
+              [(ngModel)]="otp"
+              placeholder="{{ 'Enter OTP' }}"
+              id="otp"
+              name="OTP"
+              required
+            />
+          </div>
+  
+          <button
+            style="width: 100%;"
+            name="login"
+            matTooltip="{{ 'Login' }}"
+            type="submit"
+            color="primary"
+            mat-raised-button
+            [disabled]="!loginForm.form.valid || mobileNumber == null"
+          >
+            <b style="color: white;">{{ "LOGIN" }}</b>
+          </button>
+        </form>
+        <div style="display: flex; padding: 10px 0px 10px 0px; width: 100%;">
+          <hr class="my-hr" />
+          <span class="fade-sub-header-text" style="color: lightgrey;">{{
+            "or"
+          }}</span>
+          <hr class="my-hr" />
+        </div>
+        <div>
+          <button
+            style="width: 100%; margin-bottom: 0.5rem;"
+            class="pc"
+            mat-raised-button
+          >
+            <img
+              style="height: 18px; margin-left: -36px; margin-right: 36px;"
+              src="../../../../assets/images/googleImage.jpg"
+            />
+            <b> {{ "Continue with Google" }}</b>
+          </button>
+        </div>
+      </div>
+      <!-- password login view -->
+      <div
+        *ngIf="selection == 'password'"
+        style="display: flex; flex-direction: column; padding-top: 1.8rem;"
+      >
+        <form (ngSubmit)="checkUserWithPassword()" #passwordForm="ngForm">
+          <div style="border: 1px solid lightgrey; margin-bottom: 5px;">
+            <div style="display: flex; height: 38px;">
+              <img
+                style="height: 12px; margin: 13px;"
+                src="assets/images/indianFlag.png"
+                alt="Avatar"
+              /><label style="margin-top: 9px;">+91</label>
+              <input
+                type="number"
+                min="0"
+                matTooltip="{{ 'This field is required' }}"
+                [(ngModel)]="mobileNumber"
+                onkeydown="if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;"
+                pattern="[0-9]{10}"
+                placeholder="{{ 'Mobile Number' }}"
+                name="mobileNumber"
+                id="mobile"
+                required
+              />
+            </div>
+          </div>
+          <div style="margin-bottom: 5px;">
+            <div>
+              <input
+                matInput
+                type="password"
+                min="0"
+                autocomplete="off"
+                placeholder="{{ 'Enter Password' }}"
+                [(ngModel)]="password"
+                name="password"
+                id="password"
+                required
+              />
+            </div>
+          </div>
+          <button
+            style="width: 100%;"
+            name="login"
+            type="submit"
+           color="primary"
+            mat-raised-button
+            [disabled]="!passwordForm.form.valid"
+          >
+            <b style="color: white;">{{ "LOGIN" }}</b>
+          </button>
+        </form>
+        <div style="display: flex; padding: 10px 0px 10px 0px; width: 100%;">
+          <hr class="my-hr" />
+          <span class="fade-sub-header-text" style="color: lightgrey;">{{
+            "or"
+          }}</span>
+          <hr class="my-hr" />
+        </div>
+  
+        <div>
+          <button
+            style="width: 100%; margin-bottom: 0.5rem;"
+            class="pc"
+            mat-raised-button
+          >
+            <img
+              style="height: 18px; margin-left: -36px; margin-right: 36px;"
+              src="../../../../assets/images/googleImage.jpg"
+            />
+            <b> {{ "Continue with Google" }}</b>
+          </button>
+        </div>
+      </div>
+    </div> 
+    <mat-card
+      style="
+        background-color: rgb(226, 226, 226);
+        text-align: center;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      "
+    >
+      <b style="color: #959595;">{{ "Don’t have an account?" }}</b>
+      <button
+        style="text-decoration: underline;background:none;color: blue;"
+        mat-button
+        color="primary"
+        (click)="signUp()"
+      >
+        <b>{{ "Sign Up" }}</b>
+      </button>
+    </mat-card>
+  </div>

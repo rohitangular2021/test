@@ -1,0 +1,171 @@
+ <div class="container">
+   <div class="header df ai pc">
+     <span class="dt pc">Add New Student</span>
+     <span>
+       <mat-icon mat-dialog-close class="cp pc">clear</mat-icon>
+     </span>
+   </div>
+
+  <div class="body" style="overflow:auto">
+    <div class="uploadCsv">
+      <div class="img-section">
+        <div *ngIf="!csv">
+          <span>Upload Image * :</span>
+        </div>
+        <div>
+          <div>
+            <div class="upload-logo" *ngIf="!csv" style="align-items: center;display: flex;cursor: pointer"
+            (click)="triggerCsv()">
+            <span>
+              <mat-icon style="color:#5A6872;font-size:2.2rem;height: 2.2rem;width: 2.2rem;">photo</mat-icon>
+            </span>
+            <span style="font-size: 12px;color: #5A6872;">Click Here to upload the Student Photo
+            </span>  
+          </div>
+          <div *ngIf="!csv" style="margin-top: 10px;">
+            <span>Import .csv file for bulk upload. Click here for Students  ,  <a href="/" target="_blank">Click here</a> for students to download sample file.</span>
+            <h1 style="color: gray;margin-top: 10px;">-OR ENTER DETAILS BELOW-</h1>
+          </div>
+          </div>
+          
+ 
+          <div class="centerCsv" *ngIf="csv" >
+            <h3 (click)="triggerCsv()">
+              <mat-icon class="dt pc" style="cursor: pointer;margin-right: 10px;">upload_file</mat-icon> {{csv}}
+            </h3>
+            <p>your File is ready to upload</p>
+            <button mat-button  class="active-button" type="submit">Start UPload</button>
+            <button mat-button (click)="clearCsv()"  class="btn">Cancel</button>
+ 
+          </div>
+ 
+          <input #uploadCsv type="file" style="display: none;" accept=".csv" (change)="csvChangeEvent($event)" />
+ 
+        </div>
+      </div>
+    </div>
+    
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="example-form">
+      <div class="form-body" style="width: 100%; margin-bottom: 12px;">
+        <div class="alpha" style="margin-right: 1%;">
+          <div class="df" style="gap: 1%;">
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" formControlName="name" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Father's Name</mat-label>
+              <input formControlName="fatherName" matInput placeholder="Father's Name" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Mother's Name</mat-label>
+              <input formControlName="motherName" matInput placeholder="Mother's Name" autocomplete="off">
+            </mat-form-field>
+          </div>
+          <div class="df" style="gap: 1%;">
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Email" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input formControlName="phone" matInput placeholder="Phone" autocomplete="off" [minLength]="10"
+                [maxLength]="10" (keypress)="numbersOnly($event)">
+            </mat-form-field>
+            <mat-form-field class="form-element" appearance="outline">
+              <mat-label>Address</mat-label>
+              <input formControlName="address" matInput placeholder="Address" autocomplete="off">
+            </mat-form-field>
+          </div>
+ 
+          <div class="df" style="column-gap: 2% ;">
+            <div style="width: 32%;">
+              <mat-form-field style="width: 100%;" appearance="outline" value="selectedValues">
+                <mat-label>Class</mat-label>
+                <mat-select formControlName="className">
+                  <mat-option *ngFor="let class of classes" [value]="class.value">
+                    {{class.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div style="width: 32%;">
+              <mat-form-field style="width: 100%;" appearance="outline" value="selectedValues">
+                <mat-label>Subjects</mat-label>
+                <mat-select multiple formControlName="subjects">
+                  <mat-option *ngFor="let subject of subjects" [value]="subject.value">
+                    {{subject.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div style="width: 31.5%;">
+              <mat-form-field class="form-element" appearance="outline">
+                <mat-label>Class Teacher</mat-label>
+                <input formControlName="classTeacher" matInput placeholder="Class Teacher" autocomplete="off">
+              </mat-form-field>
+            </div>
+          </div>
+ 
+          <div class="df" style="gap: 1%;">
+            <div class="check-section">
+              <div class="df" style="justify-content: space-between;">
+                <div> <span>Gender * : </span></div>
+                <mat-radio-group color="primary" formControlName="gender" aria-label="Select an option">
+                  <mat-radio-button class="pc" value="male">Male</mat-radio-button>
+                  <mat-radio-button class="pc" value="female">Female</mat-radio-button>
+                  <mat-radio-button class="pc" value="other">Others</mat-radio-button>
+                </mat-radio-group>
+ 
+              </div>
+ 
+              <div class="df" style="justify-content: space-between;">
+                <div><span>Nationality * : </span></div>
+                <mat-radio-group color="primary" formControlName="nationality" aria-label="Select an option">
+                  <mat-radio-button class="pc" value="indian">Indian</mat-radio-button>
+                  <mat-radio-button class="pc" value="other">Other</mat-radio-button>
+                </mat-radio-group>
+              </div>
+ 
+              <div>
+                <mat-form-field class="form-element" appearance="outline">
+                  <mat-label>Date of Birth</mat-label>
+                  <input type="date" formControlName="dob" matInput placeholder="Date Of Birth" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+ 
+            <div class="img-section">
+              <div>
+                <span>Upload Image * :</span>
+              </div>
+              <div>
+                <div class="upload-logo" *ngIf="!imageUrl" style="align-items: center;display: flex;cursor: pointer;"
+                  (click)="triggerFileInput()">
+                  <span>
+                    <mat-icon style="color:#5A6872;font-size:2.2rem;height: 2.2rem;width: 2.2rem;">photo</mat-icon>
+                  </span>
+                  <span style="font-size: 12px;color: #5A6872;">Click Here to upload the Student Photo
+                  </span>
+                </div>
+ 
+                <div class="center" *ngIf="imageUrl" (click)="triggerFileInput()" style="cursor: pointer">
+                  <img [src]="imageUrl" class="logo" />
+                </div>
+                <input #changeLogo type="file" style="display: none;" accept=".png, .jpg, .jpeg"
+                  (change)="fileChangeEvent($event)" />
+              </div>
+            </div>
+ 
+          </div>
+ 
+        </div>
+      </div>
+      <div class="footer df">
+        <button mat-button [disabled]="!formGroup.valid" class="active-button" type="submit">Submit</button>
+        <button mat-button (click)="formGroup.reset()" mat-button color="primaary">ReSet</button>
+      </div>
+    </form>
+  </div>
+
+ </div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="16px" viewBox="0 0 15 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>dashboard </title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="organisms/navigation-drawer" transform="translate(-27.000000, -92.000000)" fill="#7D7D7D">
+            <g id="navigation-drawer" transform="translate(0.000000, 0.500000)">
+                <g id="nav-list" transform="translate(25.000000, 91.000000)">
+                    <g id="list-item" transform="translate(2.000000, 0.000000)">
+                        <g id="vehicle-dashboard" transform="translate(0.000000, 1.000000)">
+                            <path d="M8.32,0 L15,0 L15,5 L8.32,5 L8.32,0 Z M8.32,15 L8.32,6.68 L15,6.68 L15,15 L8.32,15 Z M0,15 L0,10 L6.68,10 L6.68,15 L0,15 Z M0,8.32 L0,0 L6.68,0 L6.68,8.32 L0,8.32 Z" id="dashboard-"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

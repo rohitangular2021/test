@@ -1,0 +1,26 @@
+<div class="cont">
+  <div class="headid" style="flex: 1 1 10%;" (click)="$event.stopPropagation()">
+    <mat-checkbox class="example-margin pc" (change)="itemChecked(userdata._id)"></mat-checkbox>
+    <span>{{" "+ userdata.name}}</span>
+  </div>
+  <div class="head" style="flex: 1 1 15%;">
+    <span>{{userdata._id}} </span>
+  </div>
+  <div class="head" style="flex: 1 1 15%">
+    <span>{{userdata.email}}</span>
+  </div>
+  <div class="head" style="flex: 1 1 15%;">
+    <span>{{userdata.phone}}</span>
+  </div>
+  <div class="head" style="flex: 1 1 15%">
+    <span>{{userdata.address}}</span>
+  </div>
+  <div class="head" style="flex: 1 1 15%;" *ngIf="(selectedUsers.length < 2)">
+    <button style="background-color: white;border: none;" >
+      <mat-icon class="pc cp" (click)="confirmDialog(userdata._id)" style="font-size: 18px;">delete</mat-icon>
+    </button>
+    <button style="background-color: white;border: none;">
+      <mat-icon class="pc cp" (click)="edit(userdata)" style="font-size: 18px;">edit</mat-icon>
+    </button>
+  </div>
+</div>

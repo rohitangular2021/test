@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4px" height="16px" viewBox="0 0 4 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>more-vert</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="molecules/toolbar" transform="translate(-987.000000, -24.000000)" fill="#FFFFFF">
+            <path d="M989,40 C987.895431,40 987,39.1045695 987,38 C987,36.8954305 987.895431,36 989,36 C990.104569,36 991,36.8954305 991,38 C991,39.1045695 990.104569,40 989,40 Z M989,34 C987.895431,34 987,33.1045695 987,32 C987,30.8954305 987.895431,30 989,30 C990.104569,30 991,30.8954305 991,32 C991,33.1045695 990.104569,34 989,34 Z M989,28 C987.895431,28 987,27.1045695 987,26 C987,24.8954305 987.895431,24 989,24 C990.104569,24 991,24.8954305 991,26 C991,27.1045695 990.104569,28 989,28 Z" id="more-vert"></path>
+        </g>
+    </g>
+</svg>

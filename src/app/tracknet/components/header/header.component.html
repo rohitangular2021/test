@@ -1,0 +1,38 @@
+<div>
+  <div class="header">
+    <div class="lefthead" style="display: flex;">
+      <div style="margin-left: 1rem">
+        <span style="min-width: 1rem; cursor: pointer" (click)="sidenavToggle()">
+          <div *ngIf="isExpand">
+            <img style="height: 0.95rem; width: 1.5rem" src="assets/images/sidenav_icon/collapse.svg" />
+          </div>
+          <div *ngIf="!isExpand">
+            <img style="height: 0.95rem; width: 1.5rem" src="assets/images/sidenav_icon/expand.svg" />
+          </div>
+        </span>
+      </div>
+      <div class="headlogocontainer">
+        <img style="height: 6rem" class="headlogo" src="../../../../assets//images/logo-side.svg" alt="Avatar"
+          *ngIf="orgLogo == ''" />
+        <img style="height: 6rem" class="headlogo" src="{{ orgLogo }}" alt="Avatar" *ngIf="orgLogo != ''" />
+      </div>
+    </div>
+    <div class="righthead">
+      <div *ngIf="fScreen==='fullScreen'"><button mat-icon-button (click)="ClosefullScreen()"
+          matTooltip="fullScreen"><span>
+            <mat-icon>fullscreen_exit</mat-icon>
+          </span></button></div>
+      <div *ngIf="fScreen!=='fullScreen'"><button mat-icon-button (click)="fullScreen()"
+          matTooltip="Close fullScreen"><span>
+            <mat-icon>fullscreen</mat-icon>
+          </span></button></div>
+      <div><button mat-icon-button [matMenuTriggerFor]="menu"><span>
+            <mat-icon>more_vert</mat-icon>
+          </span></button></div>
+    </div>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="profile">Profile</button>
+    <button (click)="logout()" mat-menu-item >Logout</button>
+  </mat-menu>
+</div>

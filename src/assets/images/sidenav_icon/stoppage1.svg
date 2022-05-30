@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>stop-circle - FontAwesome</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Live-Tracking" transform="translate(-26.000000, -730.000000)" fill="#00A3DA">
+            <g id="navigation-drawer" transform="translate(-1.000000, -0.500000)">
+                <g id="nav-list-2" transform="translate(2.000000, 618.000000)">
+                    <g id="list-item" transform="translate(25.000000, 110.000000)">
+                        <g id="stoppage" transform="translate(0.000000, 2.000000)">
+                            <path d="M12.1428716,12.5714239 L12.1428716,6.1428448 C12.1428716,5.9419517 11.9866214,5.78570151 11.7857283,5.78570151 L5.35714924,5.78570151 C5.15625615,5.78570151 5.00000596,5.9419517 5.00000596,6.1428448 L5.00000596,12.5714239 C5.00000596,12.772317 5.15625615,12.9285672 5.35714924,12.9285672 L11.7857283,12.9285672 C11.9866214,12.9285672 12.1428716,12.772317 12.1428716,12.5714239 Z M17.1428776,9.35713434 C17.1428776,14.0892828 13.3035873,17.9285731 8.57143879,17.9285731 C3.83929029,17.9285731 0,14.0892828 0,9.35713434 C0,4.62498584 3.83929029,0.785695553 8.57143879,0.785695553 C13.3035873,0.785695553 17.1428776,4.62498584 17.1428776,9.35713434 Z" id="stop-circle---FontAwesome"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

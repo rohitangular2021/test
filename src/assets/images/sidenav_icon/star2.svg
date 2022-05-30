@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>star</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Live-Tracking" transform="translate(-24.000000, -577.000000)" fill="#7D7D7D">
+            <g id="navigation-drawer" transform="translate(-1.000000, -0.500000)">
+                <g id="nav-list" transform="translate(25.000000, 480.000000)">
+                    <g id="list-item" transform="translate(0.000000, 98.000000)">
+                        <polygon id="star" points="10 15.273 16.18 19 14.545 11.971 20 7.244 12.809 6.627 10 0 7.191 6.627 0 7.244 5.455 11.971 3.82 19"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

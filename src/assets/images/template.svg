@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>template</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="organisms/navigation-drawer" transform="translate(-27.000000, -404.000000)" fill="#7D7D7D">
+            <g id="navigation-drawer" transform="translate(0.000000, 0.500000)">
+                <g id="nav-list" transform="translate(24.000000, 354.000000)">
+                    <g id="list-item" transform="translate(2.000000, 49.000000)">
+                        <path d="M8.82,7 L13.44,7 L8.82,2.42 L8.82,7 Z M3,1.18 L9.68,1.18 L14.68,6.18 L14.68,16.18 C14.68,16.6333356 14.513335,17.0199984 14.18,17.34 C13.846665,17.6600016 13.4533356,17.82 13,17.82 L3,17.82 C2.5466644,17.82 2.153335,17.6600016 1.82,17.34 C1.486665,17.0199984 1.32,16.6333356 1.32,16.18 L1.36,2.82 C1.36,2.3666644 1.5199984,1.9800016 1.84,1.66 C2.1600016,1.3399984 2.5466644,1.18 3,1.18 Z" id="template"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

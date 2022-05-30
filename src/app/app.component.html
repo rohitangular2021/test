@@ -1,0 +1,8 @@
+<div [hidden]="loading" style="overflow: hidden;" >   
+  <router-outlet></router-outlet>
+</div>
+<div [hidden]="!loading" style="position:fixed;top:42%;left:45%">
+  <mat-spinner [strokeWidth]=5 [diameter]=50>
+  </mat-spinner>
+</div>
+

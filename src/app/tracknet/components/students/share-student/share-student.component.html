@@ -1,0 +1,76 @@
+<div [ngStyle]="{ width: (appService.getView() | async) ? '520px' : '100vw' }">
+  <div class="share-info-header df ai jc">
+    <span class="fw mt mf">Share via {{ shareVia === "sms" ? "SMS" : "Email" }}</span>
+    <button mat-icon-button class="clear-btn" (click)="close()">
+      <mat-icon class="clear-btn-icon xlf">clear</mat-icon>
+    </button>
+  </div>
+
+
+  <div class="container">
+    <div class="df">
+      <div class="body-container" style="padding: 0px 20px" *ngIf="!shareInfoScreen">
+        <div *ngIf="data.shareVia === 'SMS'">
+          <span class="lf gt">Enter Contact:</span>
+          <div style="margin-top: 13px">
+            <mat-form-field class="mt fw" style="width: 100%">
+              <input trim matInput autocomplete="off" placeholder="Enter Contact Number" [(ngModel)]="mobileNumber"
+                maxlength="10" (keypress)="numbersOnly($event)" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div *ngIf="shareVia === 'email'">
+          <div class="input-border no-mb">
+            <label class="lf gt">Enter Email ID(s):</label>
+            <div style="margin-top: 10px" *ngFor="
+                  let contact of emails;
+                  let index = index;
+                  trackBy: trackByIdx
+                ">
+              <span *ngIf="index > 0" class="sf dt rpc df cp" style="justify-content: flex-end; margin-top: 10px"
+                (click)="removeEmail(index)">Remove</span>
+              <mat-form-field style="width: 100%">
+                <input matInput autocomplete="off" placeholder="{{ 'Enter Email' + '*' }}"
+                  (keyup)="onInputChange($event, index)" [(ngModel)]="emails[index]" />
+              </mat-form-field>
+              <span *ngIf="!validateEmail(emails[index]) && emails[index]" class="sf rpc"
+                style="display: block; margin-top: -13px">Enter a valid email</span>
+            </div>
+          </div>
+
+          <div class="df">
+            <button mat-icon-button class="mf pc" [disabled]="!proceedbtn" (click)="addEmail()">
+              <mat-icon class="pd-fs">add</mat-icon>Add Another
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body-container" style="padding: 0px 20px" *ngIf="shareInfoScreen">
+        <strong style="margin-bottom: 10px;"><span>To : </span> </strong>
+      <div class="df" style="column-gap:5px">
+        <div class="df" *ngFor="let email of emails let index=index; trackBy: trackByIdx">
+          <span class="email" style="display:inherit">{{email}}
+          <mat-icon style="cursor: pointer;" *ngIf="index > 0" (click)="removeEmail(index)">close</mat-icon>
+          </span>
+        </div>
+      </div>
+        <div style="margin-top: 20px;">
+          <mat-form-field style="width:100%;" class="example-full-width" appearance="fill">
+            <mat-label>Leave a message</mat-label>
+            <textarea [(ngModel)]="message" matInput placeholder="message"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left" *ngIf="!shareInfoScreen"><button mat-button mat-dialog-close> Cancel</button></div>
+    <div class="left" *ngIf="shareInfoScreen"><button (click)="shareInfoScreen = false" mat-button> Back</button></div>
+    <div class="roght">
+      <button mat-button  *ngIf="!shareInfoScreen" (click)="proceed()" [disabled]="!proceedbtn" class="btn"> Proceed</button>
+      <button mat-button *ngIf="shareInfoScreen" (click)="send()" [disabled]="emails.length <1 " class="btn"> Send</button>
+    </div>
+  </div>
+</div>

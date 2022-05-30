@@ -1,0 +1,42 @@
+<div>
+  <div class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <mat-nav-list>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <span class="full-width" class="horgap" *ngIf="isExpanded || isShowing">Sidenav</span>
+        <mat-icon mat-list-icon>menu</mat-icon>
+        <mat-icon class="menu-button" *ngIf="isExpanded || isShowing">{{ !showSubmenu ?"expand_more":"expand_less"}}
+        </mat-icon>
+      </mat-list-item>
+      <div *ngIf="showSubmenu" style="padding-left: 15px;">
+        <div *ngFor="let item of navbar let index=index; trackBy: trackByIdx">
+          <div *ngIf="!item.children" class="sideitem" routerLinkActive="active" [routerLink]="item.to">
+            <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+            <span mat-list-item class="horgap" *ngIf="isExpanded || isShowing">{{item.title}}</span>
+          </div>
+         
+          <div *ngIf="item.children">
+          <div class="sideitemchild" (click)="showOpenChild(item,index)">
+              <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+              <span mat-list-item class="horgap" *ngIf="isExpanded || isShowing">{{item.title}}</span>
+              <mat-icon class="menu-button" *ngIf="isExpanded || isShowing">{{ !showChild ?"expand_more":"expand_less"}}</mat-icon>
+            </div>
+
+            <div *ngIf="item.isShowChild">
+            <div *ngFor="let child of item.children">
+              <div class="sideitem1" routerLinkActive="active" [routerLink]="child.to">
+                <mat-icon mat-list-icon>{{child.icon}}</mat-icon>
+                <span mat-list-item class="horgap" *ngIf="isExpanded || isShowing">{{child.title}}</span>
+              </div>
+            </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </mat-nav-list>
+    <mat-nav-list>
+    </mat-nav-list>
+  </div>
+</div>

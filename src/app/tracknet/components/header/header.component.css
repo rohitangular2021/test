@@ -1,0 +1,38 @@
+.righthead{
+   padding-top: 5px;
+   display: flex;
+ }
+
+  .header {
+    font-weight: bold;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+  
+  .headlogocontainer
+  {
+    width: 30;
+    text-align: left;
+    padding: 0.3rem;
+  }
+  
+  .headlogo
+  {
+    max-height: 2.5rem;
+  }
+  
+  @media(max-width: 650px)
+  {
+    .headlogocontainer
+    {
+      width: 9rem;
+      text-align: center;
+      margin-top: 3px;
+      margin-left: 2px;
+    }
+  .headlogo{
+    margin-top: 1px;
+    max-width: 7rem;
+  }
+  }

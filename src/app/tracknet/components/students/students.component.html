@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="header">
+    <div class="leftheader df ai">
+      <div class="df ai">
+        <span style="font-weight: 900;font-size: 20px">Students</span>
+        <button mat-icon-button class="create-new" (click)="addStudent()" matTooltip="Add new user">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      
+      <span class="pc" style="font-size: 12px;margin-left: 20px;">
+        {{students?.length}} Order out of {{students?.length}}</span>
+      <div class="user-search">
+        <input #search type="text" class="usersearch" [(ngModel)]="searchKey" placeholder="Search Student Name" />
+        <span>
+          <button *ngIf="searchKey==''" matSuffix mat-icon-button style="right: 36px;">
+            <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;">search</mat-icon>
+          </button>
+        </span>
+        <span>
+          <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" style="right: 36px;">
+            <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;" (click)="clearSearch()">clear</mat-icon>
+          </button>
+        </span>
+      </div>
+
+      <div>
+        <button *ngIf="!(selectedStudents.length < 2)" (click)="confirmDialog()" class="pc" mat-icon-button>
+          <mat-icon>delete</mat-icon>delete {{selectedStudents?.length}}
+        </button>
+      </div>
+    </div>
+    <div class="rightheader df ai">
+      <div>
+        <button mat-icon-button class="pc" (click)="downloadOrShareReports()">
+          <mat-icon class="cp">download</mat-icon>
+        </button>
+        <!-- <button mat-icon-button matTooltip="upload" class="pc" (click)="uploadCsv()">
+          <mat-icon class="cp">upload_file</mat-icon>
+        </button> -->
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>share</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="shareVia('SMS')">Share Via SMS</button>
+          <button mat-menu-item (click)="shareVia('email')">Share Via Email</button>
+        </mat-menu>
+        <button mat-icon-button>
+          <mat-icon class="cp">settings</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <mat-progress-bar
+  *ngIf="isSpinner"
+  style="height: 3px; z-index: 10"
+  mode="query"
+></mat-progress-bar>
+  <div class="body" [ngSwitch]="selectedView">
+    <div *ngSwitchCase="'detailPage'">
+      <app-student-item [students]="students" (checked)="studentChecked($event)" (student)="loadStudent($event)"
+        [searchKey]="searchKey" (delStudent)="loadStudents($event)" [selectedStudents]="selectedStudents">
+      </app-student-item>
+    </div>
+
+    <div *ngSwitchCase="'editpageview'">
+      <app-edit-student [student]="student" (gobackbtn)="changeView($event)"></app-edit-student>
+    </div>
+  </div>
+</div>

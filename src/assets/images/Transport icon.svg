@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Transport icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="REVAMP-FILES" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Drivers-Copy-3" transform="translate(0.000000, -67.000000)">
+            <g id="Transport-icon" transform="translate(-1.000000, 67.000000)">
+                <rect id="Rectangle-26" fill="#F5F5F5" x="0" y="0" width="65" height="64"></rect>
+                <g id="Group-7" transform="translate(21.000000, 24.000000)">
+                    <path d="M12,0 L12,14.4827856 C12.0042241,14.9937815 12.4669278,15.392 13.0391337,15.392 C13.0402168,15.392 14.6825333,15.392 17.9660832,15.392 L17.9660832,10.2649713 L23,10.2649713 L13.9159198,10.2649713 L13.9159198,5.1382225 L29.8657564,5.1382225 L29.8657564,0.86779739 C29.8498347,0.39150227 29.406302,0.01035424 28.8522923,0 L12,0 Z" id="Fill-5" fill="#C3CCCF" fill-rule="nonzero"></path>
+                    <path d="M12,0 L28.8522923,0 C29.406302,0.01035424 29.8498347,0.39150227 29.8657564,0.86779739 L29.8657564,5.1382225 L17.9159198,5.1382225 L17.9660832,10.2649713 L17.9660832,15.392 C14.6825333,15.392 13.0402168,15.392 13.0391337,15.392 C12.4669278,15.392 12.0042241,14.9937815 12,14.4827856 C12,10.2682142 12,7.10728569 12,5 C12,3.88888889 12,2.22222222 12,0 Z M1,0 L12,0 L12,5 L0,5 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="Combined-Shape" fill="#C3CCCF" fill-rule="nonzero"></path>
+                    <path d="M12,5.1382225 L12,22.4827856 C12.0042241,22.9937815 12.4669278,23.392 13.0391337,23.392 C14.3481169,23.392 15.6571001,23.392 16.9660832,23.392 L16.9660832,23.392 C17.518368,23.392 17.9660832,22.9442847 17.9660832,22.392 L17.9660832,10.2649713 L17.9159198,5.1382225 L29.8657564,5.1382225 L12,5.1382225 Z" id="Fill-5-Copy" fill="#B4C0C5" fill-rule="nonzero"></path>
+                    <circle id="Oval-3" fill="#29C16B" cx="3" cy="13" r="3"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="organisms/vehicle-card-in-trip" transform="translate(-98.000000, -14.000000)">
+            <g id="power-diconnected" transform="translate(99.000000, 15.000000)">
+                <g id="Group">
+                    <circle id="Oval" stroke="#F14040" fill="#F8F3F3" cx="7" cy="7" r="7"></circle>
+                    <path d="M9.684,4.733 C9.8573342,4.733 10.0263325,4.78716612 10.191,4.8955 C10.3556675,5.00383387 10.4899995,5.14249915 10.594,5.3115 C10.6980005,5.48050084 10.75,5.6516658 10.75,5.825 L10.75,8.789 L8.852,10.7 L8.852,12.325 L6.161,12.325 L6.161,10.7 L4.25,8.789 L4.25,5.825 C4.25,5.6516658 4.30199948,5.48050084 4.406,5.3115 C4.51000052,5.14249915 4.64433251,5.00383387 4.809,4.8955 C4.97366749,4.78716612 5.1426658,4.733 5.316,4.733 L5.342,4.733 L5.342,2.575 L6.408,2.575 L6.408,4.733 L8.592,4.733 L8.592,2.575 L9.658,2.575 L9.684,4.733 Z" id="power---material" fill="#90A1C1"></path>
+                    <path d="M1.5,10.5 L12.5,3.5" id="Line" stroke="#F14040" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

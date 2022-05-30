@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "dashboard",
+    "isShowChild":null,
+    "to": "dashboard"
+  },
+  {
+    "title": "Users",
+    "icon": "settings_accessibility",
+    "isShowChild":null,
+    "to": "users"
+  },
+  {
+    "title": "Students",
+    "icon": "people",
+    "isShowChild":null,
+    "to": "students"
+  },
+  {
+    "title": "Learning",
+    "isShowChild":false,
+    "icon": "map",
+    "children": [{
+        "title": "LeafLet Map",
+        "icon": "map",
+        "to": "learning/map"
+      },
+      {
+        "title": "Chat App",
+        "icon": "lock",
+        "to": "learning/chatApp"
+      }
+    ]
+  },
+  {
+    "title": "Settings",
+    "isShowChild":false,
+    "icon": "settings",
+    "children": [{
+        "title": "Account",
+        "icon": "3p",
+        "to": "Settings/account"
+      },
+      {
+        "title": "Privacy",
+        "icon": "shield_moon",
+        "to": "Settings/privacy"
+      }
+    ]
+  }
+]

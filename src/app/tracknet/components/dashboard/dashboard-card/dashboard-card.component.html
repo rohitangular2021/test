@@ -1,0 +1,89 @@
+<div class="dasbord-container">
+    <div class="dsc">
+        <div style="padding: 10px;">
+            <div class="heading">Users({{dashboardData?.users}}) </div>
+            <div>
+                <div style="display: flex;" >
+                    <div class="efp" (click)="openClick()">
+                        <div class="pickup">
+                            Active Users
+                        </div>
+                        <span>{{dashboardData?.active_users}}</span>
+                    </div>
+                    <div class="efp" (click)="openClick()">
+                       <div class="pickup">InActive Users</div> 
+                       <span>{{dashboardData?.inActive_users}}</span>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="efp" (click)="openClick()">
+                        <div class="pickup">
+                            Active Students
+                        </div>
+                        <span>{{dashboardData?.active_students}}</span>
+                    </div>
+                    <div class="efp" (click)="openClick()">
+                        <div class="pickup">
+                            InActive Students
+                        </div>
+                        <span>{{dashboardData?.inActive_students}}</span>
+                       
+                    </div>
+                </div>
+                <div class="pod-p" (click)="openClick()">
+                    <div class="pickup"> Users</div>
+                    <span>{{dashboardData?.users}}</span>
+                </div>
+            </div>
+            
+        </div>
+        <div  style="padding: 10px;">
+            <div class="heading">Students({{dashboardData?.inActive_users}})</div>
+            <div style="display: flex;flex-direction: column;">
+                <div class="vap" (click)="openClick()">
+                   <div class="pickup">
+                    Student Assignment Pending
+                   </div> 
+                   <span>{{dashboardData?.students_assignment_pending}}</span>
+                </div>
+                <div class="vap" (click)="openClick()">
+                    <div class="pickup">
+                        Acceptance Pending
+                    </div>
+                   <span>{{dashboardData?.students_acceptence_pending}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="auction-container">
+        <div style="display:flex;padding: 10px;">
+            <div class="heading">Auctions({{dashboardData?.inActive_users}})</div>
+            <div class="vlr">No of active students({{dashboardData?.inActive_users}})</div>
+            <div class="vlr">No of expired Students({{dashboardData?.inActive_users}})</div>
+        </div>
+        <div class="auction-status">
+            <div class="ac">
+                <div class="pickup">Live: <span style="margin-left: 2px;">{{dashboardData?.inActive_users}}</span></div>
+                <div style="display: flex;justify-content: space-around;">
+                    <span class="responded">Responded- {{dashboardData?.inActive_users}}</span>
+                    <span class="responded">Unresponded- {{dashboardData?.inActive_users}}</span>
+                </div>   
+            </div>
+            <div class="ac">
+                <div class="pickup">Crictical:<span style="margin-left: 2px;">{{dashboardData?.inActive_users}}</span></div>
+                <div style="display: flex;justify-content: space-around;">
+                    <span class="responded">Responded- {{dashboardData?.inActive_users}}</span>
+                    <span class="responded">Unresponded- {{dashboardData?.inActive_users}}</span>
+                </div>
+               
+            </div>
+            <div class="ac">
+               <div class="pickup">Round closed:<span style="margin-left: 2px;">{{dashboardData?.inActive_users}}</span></div> 
+               <div style="display: flex;justify-content: space-around;">
+                <span class="responded">Responded- {{dashboardData?.inActive_users}}</span>
+                <span class="responded">Unresponded- {{dashboardData?.inActive_users}}</span>
+               </div>  
+            </div>
+        </div>
+    </div>
+</div>

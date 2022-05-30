@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Tracknet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="32" height="32" rx="2"></rect>
+        <path d="M4.54,3.36 L0.76,3.36 C0.483857625,3.36 0.26,3.13614237 0.26,2.86 L0.26,1.22 C0.26,0.943857625 0.483857625,0.72 0.76,0.72 L11.46,0.72 C11.7361424,0.72 11.96,0.943857625 11.96,1.22 L11.96,2.86 C11.96,3.13614237 11.7361424,3.36 11.46,3.36 L7.68,3.36 L7.68,14.5 C7.68,14.7761424 7.45614237,15 7.18,15 L5.04,15 C4.76385763,15 4.54,14.7761424 4.54,14.5 L4.54,3.36 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Live-Tracking" transform="translate(-25.000000, -80.000000)">
+            <g id="Tracknet" transform="translate(25.000000, 80.000000)">
+                <g id="Rectangle-17">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#153E4B" xlink:href="#path-1"></use>
+                    <rect fill="#1A4D5E" opacity="0.48984375" mask="url(#mask-2)" transform="translate(6.000000, 16.500000) rotate(90.000000) translate(-6.000000, -16.500000) " x="-10" y="13" width="32" height="7"></rect>
+                    <rect fill="#1A4D5E" opacity="0.48984375" mask="url(#mask-2)" transform="translate(16.000000, 16.500000) rotate(90.000000) translate(-16.000000, -16.500000) " x="0" y="13" width="32" height="7"></rect>
+                    <rect fill="#1A4D5E" opacity="0.48984375" mask="url(#mask-2)" transform="translate(26.000000, 16.500000) rotate(90.000000) translate(-26.000000, -16.500000) " x="10" y="13" width="32" height="7"></rect>
+                </g>
+                <g id="T" transform="translate(10.000000, 9.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

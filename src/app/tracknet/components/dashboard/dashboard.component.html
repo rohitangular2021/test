@@ -1,0 +1,11 @@
+<div class="dashboard bbc df ai">
+    <span class="fw">Dashboard</span>
+ </div>
+ <mat-progress-bar
+  *ngIf="spinner"
+  mode="indeterminate"
+  class="custom-progress-bar"
+></mat-progress-bar>
+<ng-container>
+    <app-dashboard-card [dashboardData]="dashboardData"></app-dashboard-card>
+</ng-container>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>battery_charging_full - material</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="REVAMP-FILES" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Live-Tracking" transform="translate(-825.000000, -646.000000)" fill="#7D7D7D">
+            <g id="Group-12" transform="translate(627.000000, 476.000000)">
+                <g id="Group-8" transform="translate(2.000000, 156.000000)">
+                    <g id="Group-18" transform="translate(28.000000, 14.000000)">
+                        <g id="Group-15" transform="translate(139.000000, 0.000000)">
+                            <path d="M33.18,15.68 L36.5,9.42 L34.82,9.42 L34.82,4.82 L31.5,11.06 L33.18,11.06 L33.18,15.68 Z M37.04,2.32 C37.3600016,2.32 37.6299989,2.4299989 37.85,2.65 C38.0700011,2.8700011 38.18,3.1399984 38.18,3.46 L38.18,16.22 C38.18,16.5400016 38.0700011,16.8033323 37.85,17.01 C37.6299989,17.2166677 37.3600016,17.32 37.04,17.32 L30.96,17.32 C30.6399984,17.32 30.3700011,17.2166677 30.15,17.01 C29.9299989,16.8033323 29.82,16.5400016 29.82,16.22 L29.82,3.46 C29.82,3.1399984 29.9299989,2.8700011 30.15,2.65 C30.3700011,2.4299989 30.6399984,2.32 30.96,2.32 L32.32,2.32 L32.32,0.68 L35.68,0.68 L35.68,2.32 L37.04,2.32 Z" id="battery_charging_full---material"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
