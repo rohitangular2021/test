@@ -28,6 +28,7 @@ export class AddStudentComponent implements OnInit {
   imageUrl: any;
   csv: any;
   selectedValues
+
   @ViewChild("changeLogo") changeLogo: any;
   @ViewChild("uploadCsv") uploadCsv: any;
   constructor(private service: TracketService,
@@ -65,29 +66,6 @@ export class AddStudentComponent implements OnInit {
       event.preventDefault();
     }
   }
-
- csvChangeEvent(event) {
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    if (event.target.files && event.target.files[0]) {
-
-      var pattern = /csv-*/;
-      reader.readAsDataURL(file);
-      if (!file.type.match(pattern)) {
-        alert('invalid format');
-        return;
-      } else {
-        // When file uploads set it to file formcontrol
-        reader.onload = () => {
-          this.csv = file.name;    
-        }
-        // ChangeDetectorRef since file is loading outside the zone
-        this.cd.markForCheck();
-      }
-
-    }
-  }
-
 
   clearCsv(){
     this.csv = null
@@ -130,13 +108,47 @@ export class AddStudentComponent implements OnInit {
     }
   };
 
-  triggerCsv = () => {
+  csvChangeEvent(event) {
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    if (event.target.files && event.target.files[0]) {
+
+      var pattern = /csv-*/;
+      reader.readAsDataURL(file);
+      if (!file.type.match(pattern)) {
+        alert('invalid format');
+        return;
+      } else {
+        // When file uploads set it to file formcontrol
+        reader.onload = () => {
+          this.csv = file;   
+        }
+        // ChangeDetectorRef since file is loading outside the zone
+        this.cd.markForCheck();
+      }
+
+    }
+  }
+
+  triggerCsv = () => { 
     try {
       this.uploadCsv.nativeElement.click();
     } catch (error) {
       console.log(error);
     }
   };
+
+  uploadCsvFN(){
+      if(this.csv){
+        this.service.uploadCsv(this.csv).subscribe((data1:any)=>{
+          console.log(data1); 
+          this.matDialog.close(data1.data)
+        })
+      }
+      else{
+        alert("please select a csv file to continue")
+      }
+  }
 
   onSubmit(formvalues: any) {
     const payload = new FormData();

@@ -7,7 +7,7 @@
           <mat-icon>add</mat-icon>
         </button>
       </div>
-      
+
       <span class="pc" style="font-size: 12px;margin-left: 20px;">
         {{students?.length}} Order out of {{students?.length}}</span>
       <div class="user-search">
@@ -38,7 +38,9 @@
         <!-- <button mat-icon-button matTooltip="upload" class="pc" (click)="uploadCsv()">
           <mat-icon class="cp">upload_file</mat-icon>
         </button> -->
-        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>share</mat-icon></button>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>share</mat-icon>
+        </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="shareVia('SMS')">Share Via SMS</button>
           <button mat-menu-item (click)="shareVia('email')">Share Via Email</button>
@@ -49,15 +51,12 @@
       </div>
     </div>
   </div>
-  <mat-progress-bar
-  *ngIf="isSpinner"
-  style="height: 3px; z-index: 10"
-  mode="query"
-></mat-progress-bar>
+  <mat-progress-bar *ngIf="isSpinner" style="height: 3px; z-index: 10" mode="query"></mat-progress-bar>
   <div class="body" [ngSwitch]="selectedView">
     <div *ngSwitchCase="'detailPage'">
-      <app-student-item [students]="students" (checked)="studentChecked($event)" (student)="loadStudent($event)"
-        [searchKey]="searchKey" (delStudent)="loadStudents($event)" [selectedStudents]="selectedStudents">
+      <app-student-item [students]="students" (checked)="studentChecked($event)"
+        (allChecked)="allStudentChecked($event)" (student)="loadStudent($event)" [searchKey]="searchKey"
+        (delStudent)="loadStudents($event)" [selectedStudents]="selectedStudents">
       </app-student-item>
     </div>
 

@@ -28,6 +28,13 @@ export class TracketService {
     return this.http.get(path)
   }
 
+  public uploadCsv(file){
+    var formData = new FormData();
+    formData.append('file',file)
+    let path = `${this.url}students/uploadCsv`
+      return this.service.callService('post',formData,path)
+  }
+
   deleteUser(id){ 
     let path = `${this.url}users/deleteuser/${id}`
     return this.service.callService('delete',null,path)

@@ -13,8 +13,6 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-
-
 @Component({
   selector: 'app-student-item',
   templateUrl: './student-item.component.html',
@@ -24,6 +22,7 @@ export interface PeriodicElement {
 export class StudentItemComponent implements OnInit {
 
   @Output() checked = new EventEmitter<any>();
+  @Output() allChecked = new EventEmitter<any>();
   @Output() student = new EventEmitter<any>();
   @Output() delStudent = new EventEmitter<any>();
 
@@ -38,11 +37,10 @@ export class StudentItemComponent implements OnInit {
     private appService: AppService,
     public dialog: MatDialog) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   studentChecked(event: any) {
-     this.checked.emit(event)
+     this.checked.emit(event)    
   }
 
   confirmDialog(id:any): void {
@@ -63,7 +61,6 @@ export class StudentItemComponent implements OnInit {
     });
   }
 
-
   delete(id:any){
     this.service.deleteStudent(id).subscribe((students:any)=>{
      if(students?.status==200){
@@ -73,7 +70,13 @@ export class StudentItemComponent implements OnInit {
     })
   }
 
-
+  selectAll(event){
+     let data = {
+      ischecked:event.checked,
+      allStudents:this.students
+    }
+    this.allChecked.emit(data)   
+  }
 
   edit(data) {
    let obj = {

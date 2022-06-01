@@ -1,6 +1,4 @@
 .container {
-    overflow-y: auto;
-    overflow-x: hidden;
     height: 100%;
     width: 100%;
   }
@@ -8,6 +6,7 @@
   .header {
     height: 55px;
     display: flex;
+    overflow: hidden;
     padding: 0px 16px 0px 10px;
     align-items: center;
     top: 0;
@@ -66,6 +65,10 @@
       box-sizing: border-box;
       height: 2rem;
       width: 98%;
+  }
+  .body{
+    overflow: auto;
+    height: 558px;
   }
 
 

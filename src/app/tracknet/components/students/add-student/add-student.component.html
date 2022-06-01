@@ -12,7 +12,7 @@
         <div *ngIf="!csv">
           <span>Upload Image * :</span>
         </div>
-        <div>
+        <div> 
           <div>
             <div class="upload-logo" *ngIf="!csv" style="align-items: center;display: flex;cursor: pointer"
             (click)="triggerCsv()">
@@ -31,10 +31,10 @@
  
           <div class="centerCsv" *ngIf="csv" >
             <h3 (click)="triggerCsv()">
-              <mat-icon class="dt pc" style="cursor: pointer;margin-right: 10px;">upload_file</mat-icon> {{csv}}
+              <mat-icon class="dt pc" style="cursor: pointer;margin-right: 10px;">upload_file</mat-icon> {{csv.name}}
             </h3>
             <p>your File is ready to upload</p>
-            <button mat-button  class="active-button" type="submit">Start UPload</button>
+            <button mat-button class="active-button" (click)="uploadCsvFN()" type="submit">Start UPload</button>
             <button mat-button (click)="clearCsv()"  class="btn">Cancel</button>
  
           </div>

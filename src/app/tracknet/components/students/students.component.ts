@@ -68,6 +68,18 @@ export class StudentsComponent implements OnInit {
     else { this.selectedStudents.push(event) }
   }
 
+  allStudentChecked(data:any){
+    if(data.ischecked){
+      this.selectedStudents = []
+      this.students.forEach((item,index)=>{
+      this.selectedStudents.push(item._id)
+      })
+    }else{
+      this.selectedStudents = []
+    }
+      
+  }
+
 
   uploadCsv()
   {
@@ -157,8 +169,12 @@ export class StudentsComponent implements OnInit {
       maxWidth: "100vw",
       maxHeight:"100vh",
     });
-    dialogRef.afterClosed().subscribe(dialogResult => {
-      if(dialogResult)this.loadStudents(dialogResult)
+    dialogRef.afterClosed().subscribe(dialogResult => {  
+      if(dialogResult){this.loadStudents(dialogResult)
+        dialogRef.close()
+      }else{
+      dialogRef.close()
+      }
     });
   }
 
