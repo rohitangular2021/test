@@ -98,7 +98,7 @@ export class AppService {
       data: [
         {
           googleSetting: {
-            key: "AIzaSyBPVb354ebi6NytQcejugJnSFfO0zu6_rc",
+            key: "",
           },
           moduleName: "ORGANISATION",
           mapType: "GOOGLE",
