@@ -134,14 +134,12 @@ export class AddStudentComponent implements OnInit {
     try {
       this.uploadCsv.nativeElement.click();
     } catch (error) {
-      console.log(error);
     }
   };
 
   uploadCsvFN(){
       if(this.csv){
         this.service.uploadCsv(this.csv).subscribe((data1:any)=>{
-          console.log(data1); 
           this.matDialog.close(data1.data)
         })
       }

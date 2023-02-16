@@ -12,6 +12,12 @@
     "to": "users"
   },
   {
+    "title": "StandAlone",
+    "icon": "people",
+    "isShowChild":null,
+    "to": "assignment"
+  },
+  {
     "title": "Students",
     "icon": "people",
     "isShowChild":null,
@@ -20,32 +26,21 @@
   {
     "title": "Learning",
     "isShowChild":false,
-    "icon": "map",
+    "icon": "school",
     "children": [{
         "title": "LeafLet Map",
         "icon": "map",
         "to": "learning/map"
       },
       {
-        "title": "Chat App",
+        "title": "Learn",
         "icon": "lock",
         "to": "learning/chatApp"
-      }
-    ]
-  },
-  {
-    "title": "Settings",
-    "isShowChild":false,
-    "icon": "settings",
-    "children": [{
-        "title": "Account",
-        "icon": "3p",
-        "to": "Settings/account"
       },
       {
-        "title": "Privacy",
-        "icon": "shield_moon",
-        "to": "Settings/privacy"
+        "title": "Rxjs",
+        "icon": "lock",
+        "to": "learning/rxjs"
       }
     ]
   }

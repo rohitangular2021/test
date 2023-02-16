@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-
+import { Title } from '@angular/platform-browser';
 import { Location } from "@angular/common";
 import { MatSnackBarConfig, MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -8,27 +8,38 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {
   Observable,
   BehaviorSubject,
-  ReplaySubject,
-  Subject,
   of,
-  iif,
-  from,
-  Subscription,
+  Subject,
 } from "rxjs";
-import { mergeMap, pluck, shareReplay } from "rxjs/operators";
-declare var jwt_decode: any;
 
 @Injectable()
 export class AppService {
   public view$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+
+  private title = new BehaviorSubject<String>('App title');
+  private title$ = this.title.asObservable();
+
+  SharingData = new Subject();
   googleKey$: Observable<any>;
+  urlPath: string;
   constructor(
     private _router: Router,
     private location: Location,
     public snackBar: MatSnackBar,
-    public http: HttpClient
+    public http: HttpClient,
+    public titleService: Title
   ) {
     this.getGoogleKeySettings();
+  }
+
+  async setTitle(value) {
+    let a = value.split('/')
+    let title = a[a.length - 1]
+    this.title.next(title);
+    await this.title$.subscribe((data: any) => {
+      this.titleService.setTitle(`Balhra - ${data}`)
+    })
+
   }
 
   decodeQueryParam(value) {
@@ -45,7 +56,7 @@ export class AppService {
     this.view$.next(value);
   }
 
-  getView(): Observable<boolean> {  
+  getView(): Observable<boolean> {
     return this.view$.asObservable();
   }
 
@@ -60,7 +71,7 @@ export class AppService {
     }
   }
 
- openSnackBar(message: string, duration: number = 8000) {
+  openSnackBar(message: string, duration: number = 8000) {
     this.snackBar.open(message, "OK", <MatSnackBarConfig>{
       duration: duration,
     });
@@ -71,6 +82,16 @@ export class AppService {
     return token;
   }
 
+  getDummyData() {
+    this.SharingData.next(
+      {
+        name: "Rohit Balhra",
+        email: "rohit@gmail.com",
+        phone: "1223746688",
+        designation: "Software Developer"
+      }
+    )
+  }
 
   getGoogleKeySettings() {
     this.googleKey$ = of({
@@ -87,8 +108,6 @@ export class AppService {
       error: null,
       status: 200,
     });
-    }
+  }
 
-   
-    
 }

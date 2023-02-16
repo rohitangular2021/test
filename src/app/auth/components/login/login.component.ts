@@ -13,15 +13,15 @@ import jwt_decode from "jwt-decode";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
-  selection :string = "password"
+  selection: string = "password"
   timer$: Observable<any> | undefined;
-  mobileNumber:number ;
-  otp:any
-  password:any 
+  mobileNumber: number;
+  otp: any
+  password: any
   startSubject$: Subject<number> = new Subject();
   subscription$: Subscription = new Subscription();
-  otpFromApi:number
-  adminData:any
+  otpFromApi: number
+  adminData: any
   constructor(
     private _store: Store<any>,
     private authService: AuthLoginService,
@@ -48,10 +48,10 @@ export class LoginComponent implements OnInit {
         )
         .subscribe((text) => this.startSubject$.next(text))
     );
-      
+
   }
 
-  
+
   logMobileNoEntered(mobileNo) {
     if (mobileNo == null || mobileNo == undefined || mobileNo.length < 10) {
       return;
@@ -62,41 +62,37 @@ export class LoginComponent implements OnInit {
     this._router.navigate(["auth/signup"]);
   }
 
-  checkUserWithPassword(){
-   let data = {
-     "phone":this.mobileNumber,
-     "password":this.password
-   }  
-   this.subscription$.add(
-    this.authService
-      .verfiyViaPassword(data)
-      .subscribe((d:any)=>{
-        if(d.status == 200 && d){
-          
-          var loginUser = jwt_decode(d.token);        
-          this.adminData = loginUser
-          this.responseFromApi(this.adminData,d.token)
-          this.appService.openSnackBar("login Successfully",2000)
-          this._router.navigate(["tracknet"]);
-        }
-        else
-        {
-          this.appService.openSnackBar(d.msg,2000)
-        }
-      })
-  );
+  checkUserWithPassword() {
+    let data = {
+      "phone": this.mobileNumber,
+      "password": this.password
+    }
+    this.subscription$.add(
+      this.authService.verfiyViaPassword(data).subscribe((d: any) => {
+          if (d.status === 200) {
+            var loginUser = jwt_decode(d.token);
+            this.adminData = loginUser
+            this.responseFromApi(this.adminData, d.token)
+            this.appService.openSnackBar("login Successfully", 2000)
+            this._router.navigate(["tracknet"]);
+          }
+          else {
+            console.log("hii");
+            this.appService.openSnackBar(d.msg, 2000)
+          }
+        },(err:any)=>{this.appService.openSnackBar(err.message, 2000)})
+    );
 
   }
 
-  responseFromApi(adminData:any,token:any)
-  { 
-     localStorage.setItem('rohitapp',token)
-     localStorage.setItem('name',adminData.name)
-     localStorage.setItem('email',adminData.email)
-     localStorage.setItem('mobile',adminData.phone)
-     localStorage.setItem('id',adminData._id)
+  responseFromApi(adminData: any, token: any) {
+    localStorage.setItem('rohitapp', token)
+    localStorage.setItem('name', adminData.name)
+    localStorage.setItem('email', adminData.email)
+    localStorage.setItem('mobile', adminData.phone)
+    localStorage.setItem('id', adminData._id)
   }
-/*  */
+  /*  */
   ngOnDestroy(): void {
     if (this.subscription$) {
       this.subscription$.unsubscribe();

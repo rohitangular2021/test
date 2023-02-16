@@ -52,3 +52,20 @@ export class searchStudent implements PipeTransform {
      return results;
   }
 }
+
+@Pipe({ name: "searchOperator" })
+export class searchOperator implements PipeTransform {
+  transform = (items: any[], searchText: string) => {
+     if(!searchText) return items;
+     return this.searchItems(items, searchText.toLowerCase());
+  }
+  private searchItems(items :any[], searchText): any[] {
+    let results = [];
+     items.forEach(it => {
+       if (it.title.toLowerCase().includes(searchText)) {
+           results.push(it);
+       }
+     });
+     return results;
+  }
+}

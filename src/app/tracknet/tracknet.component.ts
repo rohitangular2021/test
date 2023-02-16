@@ -2,6 +2,11 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Subscription,debounceTime } from 'rxjs';
+import { FetchSettingsAction } from './actions/tracknet.settings.actions';
+import { SettingSelector } from './reducers/settings.sectector';
+import { TracketService } from './services/tracket.service';
 
 declare var deferredPrompt: any;
 @Component({
@@ -12,16 +17,31 @@ declare var deferredPrompt: any;
 export class TracknetComponent implements OnInit {
 
   @ViewChild('sidenav') sidenav: MatSidenav;
+  subscriptions$: Subscription = new Subscription();
   isExpanded = true;
   loading: boolean =  false; 
   headerName:string = ""
   elem:any
   constructor(
+    private store:Store,
     @Inject(DOCUMENT) private document: any,
-    public router:Router) { }
+    public service:TracketService,
+    public router:Router) { } 
 
   ngOnInit(): void {
-    this.elem = document.documentElement;
+   this.elem = document.documentElement;
+   this.store.dispatch(new FetchSettingsAction())
+   
+   setTimeout(() => {
+    this.subscriptions$.add(
+      this.store
+        .select(SettingSelector)
+        .pipe(debounceTime(100))
+        .subscribe((settings: any) => {
+            this.service.checksettings(settings)
+        })
+    );
+  }, 2000);
   }
 
   goToDashboardView(name) {

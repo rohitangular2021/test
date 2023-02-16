@@ -1,0 +1,77 @@
+[{
+  "title": "tap() Operator",
+  "description": "RxJS tap() operator is a utility operator that returns an observable output that is identical to the source observable but performs a side effect for every emission on the source observable",
+  "likeCount": 2
+},
+{
+    "title": "Take() Operator",
+    "description": "take returns an Observable that emits only the first count values emitted by the source Observable. If the source emits fewer than count values then all of its values are emitted. After that, it completes, regardless if the source completes.",
+    "likeCount": 5
+  },
+  {
+    "title": "Observable",
+    "description": "In RxJS, an observable is a function that is used to create an observer and attach it to the source where values are expected from. For example, clicks, mouse events from a DOM element or an Http request, etc. are the example of observableIn other words, you can say that observer is an object with callback functions, which is called when there is interaction to the Observable. For example, the source has interacted for an example, button click, Httprequest, etc Observables can also be defined as lazy Push collections of multiple values. Let's see a simple example to understand how observables are used to push the values",
+    "likeCount": 7
+  },
+  {
+    "title": "Subscription",
+    "description": "The RxJS Subscribe operator is used as an adhesive agent or glue that connects an observer to an Observable. An observer must be first subscribed to see the items being emitted by an Observable or to receive an error or completed notifications from the Observable.",
+    "likeCount": 7
+  },
+  {
+    "title": "Subjects",
+    "description": "An RxJS Subject is like an Observable. It is a special type of Observable that allows values to be multicasted to many Observers. In simple words, we can say that an RxJS subject is an Observable can multicast or talk to many observers.According to its official definition,A Subject is like an Observable, but can multicast to many Observers. Subjects are like EventEmitters: they maintain a registry of many listeners.An RxJS subject can be subscribed to, just like we usually do with Observables. It also has methods such as next(), error() and complete(), which we have already seen and used in our Observable creation function.The main difference between an Observable and a Subject is that a plain Observable by default is unicast. It means that each subscribed Observer owns an independent execution of the Observable. On the other hand, Subjects are multicast. A Subject is like an Observable, but it can multicast to many Observers. The main reason behind using Subjects is to multicast.",
+    "likeCount": 1
+  },
+  {
+    "title": "Scheduler",
+    "description": "An RxJS Scheduler is a way to control the timing strategy used to execute tasks in RxJS apps or reactive applications. A scheduler comes in action to control when a subscription starts and when notifications are delivered.According to the official documentation of RxJS application website, a Scheduler is defined as A Scheduler is an entity that facilitates you to define in what execution context, an Observable will deliver notifications to its Observer.",
+    "likeCount": 1
+  },
+  {
+    "title": "Map",
+    "description": "The map operator is the most common of all. For each value that the Observable emits you can apply a function in which you can modify the data. The return value will, behind the scenes, be reemitted as an Observable again so you can keep using it in your stream. It works pretty much the same as how you would use it with Arrays. The difference is that Arrays will always be just Arrays and while mapping you get the value of the current index in the Array. With Observables the type of data can be of all sorts of types. This means that you might have to do some additional operations in side your Observable map function to get the desired result",
+    "likeCount": 1
+  },
+  {
+    "title": "MergeMap",
+    "description": "In the mergeMap operator, a project function is applied on each source value, and the output of it is merged with the output Observable.In other words, we can say that the RxJS mergeMap() operator maps each value to an Observable, then flattens all of these inner Observables using mergeAll.The mergeMap() operator is also called flatMap. This operator is best to use when you want to flatten an inner observable and manually control the number of inner subscriptions. The RxJS mergeMap() operator maintains multiple active inner subscriptions at once. So, it is possible to create a memory leak through long-lived inner subscriptions.",
+    "likeCount": 4
+  },
+  {
+    "title": "SwitchMap",
+    "description": "The switchMap operator is used to apply a project function on each source value. The output of it is merged with the output Observable, and the value given is the most recent projected Observable.",
+    "likeCount": 5
+  },
+  {
+    "title": "concatmap",
+    "description": "concatMap also subscribes to the inner Observable for you. But unlike switchMap, that unsubscribes from the current Observable if a new Observable comes in, concatMap will not subscribe to the next Observable until the current one completes. The benefit of this is that the order in which the Observables are emitting is maintained. ",
+    "likeCount": 1
+  },
+  {
+    "title": "exaustmap",
+    "description": "The Angular ExhaustMap maps each value from the source observable into an inner observable, subscribes to it. It then starts emitting the values from it replacing the original value. It then waits for the inner observable to finish. If it receives any new values before the completion of the inner observable it ignores it. It receives a new value after completion of the inner observable, then it creates a new inner observable. The whole process repeats itself until the source observable is completes",
+    "likeCount": 1
+  },
+  {
+    "title": "pluck",
+    "description": "Pluck is used to select/pick a property to emit (without having to emit properties that we don't care for, hence improving the performance).",
+    "likeCount": 1
+  },
+  {
+    "title":"forkjoin",
+    "description":"This operator is best used when you have a group of observables and only care about the final emitted value of each. One common use case for this is if you wish to issue multiple requests on page load (or some other event) and only want to take action when a response has been received for all. In this way it is similar to how you might use Promise.all.",
+    "likeCount":2083
+  },
+  {
+    "title":"combineLatest",
+    "description":"Be aware that combineLatest will not emit an initial value until each observable emits at least one value. This is the same behavior as withLatestFrom and can be a gotcha as there will be no output and no error but one (or more) of your inner observables is likely not functioning as intended, or a subscription is late.",
+    "likeCount":203
+  },
+  {
+    "title":"shareReplay",
+    "description":"ShareReplay - Angular. You generally want to use shareReplay when you have side-effects or taxing computations that you do not wish to be executed amongst multiple subscribers. It may also be valuable in situations where you know you will have late subscribers to a stream that needs access to previously emitted values.",
+    "likeCount":237
+  }
+
+]

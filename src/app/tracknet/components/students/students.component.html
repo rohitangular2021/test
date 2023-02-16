@@ -53,7 +53,7 @@
   </div>
   <mat-progress-bar *ngIf="isSpinner" style="height: 3px; z-index: 10" mode="query"></mat-progress-bar>
   <div class="body" [ngSwitch]="selectedView">
-    <div *ngSwitchCase="'detailPage'">
+    <div *ngSwitchCase="'detailPage'" >
       <app-student-item [students]="students" (checked)="studentChecked($event)"
         (allChecked)="allStudentChecked($event)" (student)="loadStudent($event)" [searchKey]="searchKey"
         (delStudent)="loadStudents($event)" [selectedStudents]="selectedStudents">

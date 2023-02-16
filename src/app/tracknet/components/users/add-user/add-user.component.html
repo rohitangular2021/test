@@ -47,6 +47,13 @@
         </mat-error>
       </mat-form-field>
 
+      <label id="example-radio-group-label">Choose Role</label> <br>
+      <mat-radio-group aria-label="Select an option" formControlName="role">
+        <mat-radio-button value="basic">Basic</mat-radio-button>
+        <mat-radio-button value="staff">Admin</mat-radio-button>
+        <mat-radio-button value="admin">Admin</mat-radio-button>
+      </mat-radio-group>
+
       <div class="form-element">
         <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit
           Form</button>

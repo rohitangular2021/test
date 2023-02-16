@@ -31,7 +31,7 @@ export class LeafletMapService {
           }
         }),
         switchMap((key) => from(this.scriptLoaderSvc.loadScript(key)).pipe(
-          switchMap((v) => of(L.map(mapId, options).setView([28.6139, 77.209], 13)).pipe(
+          switchMap((v) => of(L.map(mapId, options).setView([20.5937, 78.9629], 4)).pipe(
             tap((leafMap) => {
               var os = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",

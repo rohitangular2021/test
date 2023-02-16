@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AssignmentComponent } from "./components/assignment/assignment.component";
 import { ChatappComponent } from "./components/chatapp/chatapp.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { MapComponent } from "./components/map/map.component";
 
 import { ProfileComponent } from "./components/profile/profile.component";
-import { AccountSettingComponent } from "./components/settings/account-setting/account-setting.component";
-import { PrivacySettingComponent } from "./components/settings/privacy-setting/privacy-setting.component";
+import { RxjsComponent } from "./components/rxjs/rxjs.component";
+import { SettingsComponent } from "./components/settings/settings.component";
 import { StudentsComponent } from "./components/students/students.component";
 import { UsersComponent } from "./components/users/users.component";
 import { TracknetComponent } from "./tracknet.component";
@@ -32,6 +33,11 @@ const routes: Routes = [
         component: ProfileComponent,
       }, 
       {
+        path: "assignment",
+        pathMatch: 'full',
+        component: AssignmentComponent,
+      }, 
+      {
         path: "users",
         pathMatch: 'full',
         component: UsersComponent,
@@ -52,15 +58,16 @@ const routes: Routes = [
         component: ChatappComponent,
       },
       {
-        path: "Settings/account",
+        path: "learning/rxjs",
         pathMatch: 'full',
-        component: AccountSettingComponent,
+        component: RxjsComponent,
       },
       {
-        path: "Settings/privacy",
+        path: "settings",
         pathMatch: 'full',
-        component: PrivacySettingComponent,
+        component: SettingsComponent,
       },
+
     ]
   },
 

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { debounceTime, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, fromEvent, map, Subject, Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import { ConfirmDialogboxComponent } from 'src/app/shared/components/confirm-dialogbox/confirm-dialogbox.component';
 import { FetchStudentsAction } from '../../actions/tracknet.students.actions';
@@ -11,29 +11,31 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { AngularCsv } from 'angular7-csv/dist/Angular-csv'
 import { ShareStudentComponent } from './share-student/share-student.component';
 import { BulkuploadstudentsComponent } from './bulkuploadstudents/bulkuploadstudents.component';
-import { trigger, transition, style, animate } from '@angular/animations';
-
-
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css'],
 })
-export class StudentsComponent implements OnInit {
+export class StudentsComponent implements OnInit, AfterViewInit {
 
+  @ViewChild("search") search: any;
   subscriptions$: Subscription = new Subscription();
+  searchOb$: Subscription;
   students: any[]
   selectedStudents: any[] = []
   searchKey: any = ''
-  isSpinner:boolean =  true
-  student:any
+  isSpinner: boolean = true
+  startSearch: Subject<any> = new Subject<any>();
+  student: any
   selectedView = "detailPage"
- 
+
   constructor(private store: Store, private service: TracketService,
-    public appService:AppService, public dialog: MatDialog) { }
+    public appService: AppService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
     this.store.dispatch(new FetchStudentsAction())
     setTimeout(() => {
       this.subscriptions$.add(
@@ -41,20 +43,33 @@ export class StudentsComponent implements OnInit {
           .select(StudentsSelector)
           .pipe(debounceTime(100))
           .subscribe((allstudents: any) => {
-           this.students = allstudents.data 
-           this.isSpinner = false
+            this.students = allstudents.data
+            this.isSpinner = false
           })
       );
     }, 2000);
+  }
+
+  ngAfterViewInit(): void {
+    try {
+      this.searchOb$ = fromEvent(this.search.nativeElement, "keyup")
+        .pipe(
+          map((e: any) => e.target.value),
+          debounceTime(5000),
+          distinctUntilChanged()
+        )
+        .subscribe((text) => {console.log(text);
+        });
+    } catch (error) {}
   }
 
   clearSearch() {
     this.searchKey = ''
   }
 
-  loadStudent(data){
-    this.student=data.student
-    this.selectedView = data.selectedView 
+  loadStudent(data) {
+    this.student = data.student
+    this.selectedView = data.selectedView
   }
 
   studentChecked(event: any) {
@@ -68,30 +83,29 @@ export class StudentsComponent implements OnInit {
     else { this.selectedStudents.push(event) }
   }
 
-  allStudentChecked(data:any){
-    if(data.ischecked){
+  allStudentChecked(data: any) {
+    if (data.ischecked) {
       this.selectedStudents = []
-      this.students.forEach((item,index)=>{
-      this.selectedStudents.push(item._id)
+      this.students.forEach((item, index) => {
+        this.selectedStudents.push(item._id)
       })
-    }else{
+    } else {
       this.selectedStudents = []
     }
-      
+
   }
 
 
-  uploadCsv()
-  {
+  uploadCsv() {
     const dialogRef = this.dialog.open(BulkuploadstudentsComponent, {
       maxWidth: "100vw",
-      maxHeight:"100vh",
+      maxHeight: "100vh",
       data: {}
     });
     dialogRef.afterClosed().subscribe(dialogResult => {
-      if(dialogResult == true){
+      if (dialogResult == true) {
       }
-    }); 
+    });
   }
 
   confirmDialog(): void {
@@ -100,34 +114,34 @@ export class StudentsComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogboxComponent, {
       maxWidth: "400px",
       data: {
-        title:"confirm delete",
-        message:message
+        title: "confirm delete",
+        message: message
       }
     });
     dialogRef.afterClosed().subscribe(dialogResult => {
-      if(dialogResult == true){
+      if (dialogResult == true) {
         this.bulkDelete()
       }
     });
   }
 
-  changeView(event){
-    this.selectedView = event 
+  changeView(event) {
+    this.selectedView = event
   }
 
-  downloadOrShareReports(){
-   let  dtStudents :any;
-   dtStudents= this.students.map(item=>{
-        return {
-          name:item.name,
-          email:item.email,
-          phone:item.phone.toString(),
-          class:item.className
-        }
-   })
-   
+  downloadOrShareReports() {
+    let dtStudents: any;
+    dtStudents = this.students.map(item => {
+      return {
+        name: item.name,
+        email: item.email,
+        phone: item.phone.toString(),
+        class: item.className
+      }
+    })
 
-   let csvOptions = {
+
+    let csvOptions = {
       fieldSeparator: ',',
       quoteStrings: '"',
       decimalseparator: '.',
@@ -138,42 +152,43 @@ export class StudentsComponent implements OnInit {
       noDownload: false,
       headers: ["Name", "Email", "Phone", "class"]
     };
-    new  AngularCsv(dtStudents, "StudentsList", csvOptions);
+    new AngularCsv(dtStudents, "StudentsList", csvOptions);
   }
 
   shareVia(string) {
     const dialog = this.dialog.open(ShareStudentComponent, {
-      maxHeight:'100vh',
-      maxWidth:'100vw',
-      data: { shareVia:string,}
+      maxHeight: '100vh',
+      maxWidth: '100vw',
+      data: { shareVia: string, }
     });
     dialog.afterClosed().subscribe((res) => {
       if (res) {
         console.log(res);
-        
+
       }
     });
   }
 
-  bulkDelete(){
-    this.service.deleteBulkStudents(this.selectedStudents).subscribe((students)=>{
-      if(students.status==200){
+  bulkDelete() {
+    this.service.deleteBulkStudents(this.selectedStudents).subscribe((students) => {
+      if (students.status == 200) {
         this.loadStudents(students.data)
-        this.appService.openSnackBar(students.msg,5000)
+        this.appService.openSnackBar(students.msg, 5000)
       }
-    })    
+    })
   }
 
-  addStudent(){
+  addStudent() {
     const dialogRef = this.dialog.open(AddStudentComponent, {
       maxWidth: "100vw",
-      maxHeight:"100vh",
+      maxHeight: "100vh",
     });
-    dialogRef.afterClosed().subscribe(dialogResult => {  
-      if(dialogResult){this.loadStudents(dialogResult)
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if (dialogResult) {
+        this.loadStudents(dialogResult)
         dialogRef.close()
-      }else{
-      dialogRef.close()
+      } else {
+        dialogRef.close()
       }
     });
   }

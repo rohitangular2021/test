@@ -35,7 +35,8 @@ export class ScriptLoaderService {
   }
 
   public async loadScript(key: string=null) {
-    var p =[]    
+    var p =[]  
+
     if(key){
       this.dynamicScripts[1]=`https://maps.googleapis.com/maps/api/js?key=${key}`
     }   

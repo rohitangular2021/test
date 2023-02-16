@@ -15,6 +15,9 @@
   <div class="head" style="flex: 1 1 15%">
     <span>{{userdata.address}}</span>
   </div>
+  <div class="head" style="flex: 1 1 15%" [ngStyle]="{color:userdata.role == 'basic'?'blue':userdata.role == 'basic'?'red':'green'}" >
+    <span>{{userdata.role ? userdata.role : 'basic'}}</span>
+  </div>
   <div class="head" style="flex: 1 1 15%;" *ngIf="(selectedUsers.length < 2)">
     <button style="background-color: white;border: none;" >
       <mat-icon class="pc cp" (click)="confirmDialog(userdata._id)" style="font-size: 18px;">delete</mat-icon>

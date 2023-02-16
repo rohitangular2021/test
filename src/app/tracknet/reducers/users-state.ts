@@ -15,7 +15,6 @@ export const initialUserState: UserState = {
 
 export interface MainUsersState {
   UserState: UserState;
-
 }
 
 export const initialMainUsersState: MainUsersState = {

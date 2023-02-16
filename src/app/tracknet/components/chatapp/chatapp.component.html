@@ -1,1 +1,24 @@
-<p>chatapp works!</p>
+<div class="df" style="height: 55vh;border-bottom:1px solid" >
+  <div style="border-right: 1px solid; width: 50%;text-align: center;">
+    <h3 style="color: red;">*ngComponentOutlet</h3>
+    <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+      <mat-button-toggle (click)="changeComponent('account')">account</mat-button-toggle>
+      <mat-button-toggle (click)="changeComponent('privacy')" >privacy</mat-button-toggle>
+      <mat-button-toggle (click)="changeComponent('security')" >security</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <hr><hr>
+    <h3 style="color: green;">SetINterval</h3>
+    {{number}}
+
+    <hr><hr>
+    <h3 style="color: green;">Timer</h3>
+    <p>return observable , // timerOne emits first value at 1s, then once every 4s
+    </p>
+    {{timerOne$ | async}}
+
+  </div>
+  <div style="border-left: 1px solid; width: 50%;">
+<ng-container *ngComponentOutlet="component"></ng-container>
+  </div>
+</div>

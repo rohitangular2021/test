@@ -11,20 +11,28 @@ import { TracketService } from '../../services/tracket.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  dashboardData:any
+  dashboardData: any
   subscriptions$: Subscription = new Subscription();
-  spinner:boolean = true
-  constructor(public ts:TracketService,private store:Store) { }
+  spinner: boolean = true
+  
+  constructor(public ts: TracketService, private store: Store) { }
+
   ngOnInit(): void {
-    this.store.dispatch(new FetchDashboardAction())   
+
+    this.ts.settings.subscribe(data => {
+    
+    })
+
+
+    this.store.dispatch(new FetchDashboardAction())
     setTimeout(() => {
       this.subscriptions$.add(
         this.store
           .select(DashboardSelector)
           .pipe(debounceTime(100))
           .subscribe((allstudents: any) => {
-           this.dashboardData = allstudents.data     
-           this.spinner = false
+            this.dashboardData = allstudents.data
+            this.spinner = false
           })
       );
     }, 2000);

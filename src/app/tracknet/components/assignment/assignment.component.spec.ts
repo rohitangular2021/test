@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrivacySettingComponent } from './privacy-setting.component';
+import { AssignmentComponent } from './assignment.component';
 
-describe('PrivacySettingComponent', () => {
-  let component: PrivacySettingComponent;
-  let fixture: ComponentFixture<PrivacySettingComponent>;
+describe('AssignmentComponent', () => {
+  let component: AssignmentComponent;
+  let fixture: ComponentFixture<AssignmentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrivacySettingComponent ]
+      declarations: [ AssignmentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrivacySettingComponent);
+    fixture = TestBed.createComponent(AssignmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

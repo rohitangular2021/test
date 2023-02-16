@@ -15,12 +15,12 @@ import { UsersComponent } from './components/users/users.component';
 import { UserItemComponent } from './components/users/user-item/user-item.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './effects/tracknet.users.effects';
-import { TracknetPipe,SelectedEntity,searchUser,searchStudent } from './pipes/tracknet.pipe';
+import { TracknetPipe, SelectedEntity, searchUser, searchStudent, searchOperator } from './pipes/tracknet.pipe';
 import { sharedModule } from '../shared/shared.module';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { DashboardCardComponent } from './components/dashboard/dashboard-card/dashboard-card.component';
-import { StudentsComponent } from './components/students/students.component'; 
+import { StudentsComponent } from './components/students/students.component';
 import { StudentsEffects } from './effects/tracknet.students.effects';
 import { StudentItemComponent } from './components/students/student-item/student-item.component';
 import { AddStudentComponent } from './components/students/add-student/add-student.component';
@@ -35,30 +35,38 @@ import { ScriptLoaderService } from './script-loader.service';
 import { DashboardEffects } from './effects/tracknet.dahboard.effects';
 import { BulkuploadstudentsComponent } from './components/students/bulkuploadstudents/bulkuploadstudents.component';
 import { ChatappComponent } from './components/chatapp/chatapp.component';
-import { AccountSettingComponent } from './components/settings/account-setting/account-setting.component';
-import { PrivacySettingComponent } from './components/settings/privacy-setting/privacy-setting.component';
+
 import { ChatService } from './services/chat.service';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { AccountSettingsComponent } from './components/settings/account-settings/account-settings.component';
+import { PrivacySettingsComponent } from './components/settings/privacy-settings/privacy-settings.component';
+import { UiSettingsComponent } from './components/settings/ui-settings/ui-settings.component';
+import { SecuritySettingsComponent } from './components/settings/security-settings/security-settings.component';
+import { NotificationSettingsComponent } from './components/settings/notification-settings/notification-settings.component';
+import { SettingsEffects } from './effects/tracknet.settings.effects';
+import { AssignmentComponent } from './components/assignment/assignment.component';
 
 @NgModule({
   declarations: [
     TracknetComponent,
-    HeaderComponent, 
+    HeaderComponent,
     FooterComponent,
     SidenavComponent,
     DashboardComponent,
     UsersComponent,
     UserItemComponent,
-    TracknetPipe,SelectedEntity,searchUser,searchStudent,
+    TracknetPipe, SelectedEntity, searchUser, searchStudent, searchOperator,
     AddUserComponent, EditUserComponent, DashboardCardComponent,
-     StudentsComponent, StudentItemComponent, AddStudentComponent, 
-     EditStudentComponent, 
-     ShareStudentComponent,
-      ViewStudentComponent, ProfileComponent, MapComponent, BulkuploadstudentsComponent, ChatappComponent, AccountSettingComponent, PrivacySettingComponent
+    StudentsComponent, StudentItemComponent, AddStudentComponent,
+    EditStudentComponent,
+    ShareStudentComponent,
+    ViewStudentComponent, ProfileComponent, MapComponent, BulkuploadstudentsComponent, ChatappComponent, RxjsComponent, SettingsComponent, AccountSettingsComponent, PrivacySettingsComponent, UiSettingsComponent, SecuritySettingsComponent, NotificationSettingsComponent, AssignmentComponent,
   ],
   imports: [
-    CommonModule,RouterModule,MaterialModule,TracknetRoutingModule,FormsModule,ReactiveFormsModule,
-    EffectsModule.forFeature([UsersEffects,StudentsEffects,DashboardEffects]),sharedModule
+    CommonModule, RouterModule, MaterialModule, TracknetRoutingModule, FormsModule, ReactiveFormsModule,
+    EffectsModule.forFeature([UsersEffects, StudentsEffects, DashboardEffects,SettingsEffects]), sharedModule
   ],
-  providers:[TracketService,AppService,LeafletMapService,ScriptLoaderService,ChatService]
+  providers: [TracketService, AppService, LeafletMapService, ScriptLoaderService, ChatService]
 })
 export class TracknetModule { }

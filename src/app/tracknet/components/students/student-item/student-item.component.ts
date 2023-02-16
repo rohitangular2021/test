@@ -1,17 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Store } from '@ngrx/store';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import { ConfirmDialogboxComponent } from 'src/app/shared/components/confirm-dialogbox/confirm-dialogbox.component';
 import { TracketService } from 'src/app/tracknet/services/tracket.service';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 @Component({
   selector: 'app-student-item',
@@ -27,17 +22,21 @@ export class StudentItemComponent implements OnInit {
   @Output() delStudent = new EventEmitter<any>();
 
   displayedColumns = ['Student_Id', 'Name', 'Email', 'Phone', 'classTeacher', 'actions'];
-  dataSource ;
-
+  dataSource:MatTableDataSource<any>; ;
   subscriptions$: Subscription = new Subscription();
   @Input() students: any[]
   @Input() selectedStudents: any[] = []
   @Input() searchKey:string
-  constructor(private store: Store, private service: TracketService,
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private service: TracketService,
     private appService: AppService,
     public dialog: MatDialog) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 
   studentChecked(event: any) {
      this.checked.emit(event)    

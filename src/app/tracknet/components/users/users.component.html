@@ -63,10 +63,12 @@
         <span>Phone</span></div>
       <div class="head" style="flex: 1 1 15%">
         <span>Address</span></div>
+        <div class="head" style="flex: 1 1 15%">
+          <span>Role</span></div>
       <div class="head" *ngIf="(selectedUsers.length < 2)" style="flex: 1 1 15%;">
         <span>Action</span></div>
     </div>
-    <div class="items" *ngFor="let item of users | searchUser : searchKey; trackBy: trackByFn
+    <div #scroll class="items" *ngFor="let item of users | searchUser : searchKey; trackBy: trackByFn
   ">
       <app-user-item [userdata]="item"
       [selectedUsers]="selectedUsers"

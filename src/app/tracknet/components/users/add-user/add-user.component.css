@@ -7,6 +7,10 @@
   .container {
     padding: 10px;
   }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
   
   .form {
     min-width: 150px;

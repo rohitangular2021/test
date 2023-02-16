@@ -35,7 +35,7 @@ export class IntercepterService {
               localStorage.removeItem('mobile')
               localStorage.removeItem('id')
               this.appService.openSnackBar('Session Expired ! Login Again',5000)
-                this.router.navigate(['/auth']);          
+              this.router.navigate(['/auth']);          
             } 
             return throwError(err); 
           } 

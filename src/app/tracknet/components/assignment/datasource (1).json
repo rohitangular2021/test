@@ -1,0 +1,502 @@
+[
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84a",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314811",
+        "serialNumber": "017321",
+        "machineType": "CRM1"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }    
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84b",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314811",
+        "serialNumber": "017324",
+        "machineType": "CRM2"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 4000,
+        "insertedTotal": 4000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84c",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314812",
+        "serialNumber": "017322",
+        "machineType": "CRM2"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84d",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314813",
+        "serialNumber": "017323",
+        "machineType": "CRM3"      
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811" 
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84e",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84f",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84g",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84h",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84i",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  {
+    "id": "d0e2959d-ddff-4676-bce7-01d3647ee84j",
+    "name": "BaChangeTransactions",
+    "content": {
+      "fileInformation": {
+        "fileType": "Change Transaction Report",
+        "dateTime": "2021-10-03T22:19:27.6209847+00:00",
+        "locale": "en-AU",
+        "version": 1,
+        "creationTrigger": 1
+        
+      },
+      "machineInformation": {
+        "machineNumber": "314814",
+        "serialNumber": "017324",
+        "machineType": "CRM4"
+        
+      },
+      "data": {
+        "transactionDateTime": "2020-12-02T13:43:15",
+        "reportNumber": "0000",
+        "acknowledgementNumber": "314811012012020005",
+        "acknowledgementIssued": "I",
+        "accessType": "Screen Access",
+        "cardNumber": "",
+        "notesRetractedFlag": false,
+        "orderedTotal": 2000,
+        "insertedTotal": 3000,
+        "receivedTotal": 4000,
+        "creditValue": 0,
+        "counterfeitNotesInsertedNumber": 0,
+        "totalCommissionAmount": 0,
+        "sortCode": "314811"
+        
+      }
+      
+    }
+  },
+  
+  {
+    "id": "9e577424-7317-4e40-97bb-38f1f2abed61",
+	"name": "BoxMessages",
+    "content": {
+        "id": "ROLL03-NOTE-AUD-500",
+        "name": "ROLL03",
+        "description": "Note RecyclerROLL03",
+        "contentAt": "2021-10-18T07:49:01.878",
+        "contentAtUtc": "2021-10-17T20:49:01.878Z",
+        "value": {
+            "currency": "AUD",
+            "denomination": 5,
+            "decimals": 2,
+            "quantity": 61,
+            "mediaType": "NOTE",
+            "value": 5,
+            "total": 305
+        },
+        "vendorDependentFields": {
+            "MESSAGE_SEQUENCE": 2437214,
+            "LINE_NUMBER": 506
+        }
+	}	
+	},
+	{
+    "id": "9e577424-7317-4e40-97bb-38f1f2abed62",
+	"name": "BoxMessages",
+    "content": {
+        "id": "ROLL03-NOTE-AUD-500",
+        "name": "ROLL03",
+        "description": "Note RecyclerROLL03",
+        "contentAt": "2021-10-18T07:49:01.878",
+        "contentAtUtc": "2021-10-17T20:49:01.878Z",
+        "value": {
+            "currency": "AUD",
+            "denomination": 5,
+            "decimals": 2,
+            "quantity": 61,
+            "mediaType": "NOTE",
+            "value": 5,
+            "total": 305
+        },
+        "vendorDependentFields": {
+            "MESSAGE_SEQUENCE": 2437214,
+            "LINE_NUMBER": 506
+        }
+	}	
+	},
+	{
+    "id": "9e577424-7317-4e40-97bb-38f1f2abed63",
+	"name": "BoxMessages",
+    "content": {
+        "id": "ROLL03-NOTE-AUD-500",
+        "name": "ROLL03",
+        "description": "Note RecyclerROLL03",
+        "contentAt": "2021-10-18T07:49:01.878",
+        "contentAtUtc": "2021-10-17T20:49:01.878Z",
+        "value": {
+            "currency": "AUD",
+            "denomination": 5,
+            "decimals": 2,
+            "quantity": 61,
+            "mediaType": "NOTE",
+            "value": 5,
+            "total": 305
+        },
+        "vendorDependentFields": {
+            "MESSAGE_SEQUENCE": 2437214,
+            "LINE_NUMBER": 506
+        }
+	}	
+	},
+	{
+    "id": "9e577424-7317-4e40-97bb-38f1f2abed64",
+	"name": "BoxMessages",
+    "content": {
+        "id": "ROLL03-NOTE-AUD-500",
+        "name": "ROLL03",
+        "description": "Note RecyclerROLL03",
+        "contentAt": "2021-10-18T07:49:01.878",
+        "contentAtUtc": "2021-10-17T20:49:01.878Z",
+        "value": {
+            "currency": "AUD",
+            "denomination": 5,
+            "decimals": 2,
+            "quantity": 61,
+            "mediaType": "NOTE",
+            "value": 5,
+            "total": 305
+        },
+        "vendorDependentFields": {
+            "MESSAGE_SEQUENCE": 2437214,
+            "LINE_NUMBER": 506
+        }
+	}	
+	},
+	{
+    "id": "9e577424-7317-4e40-97bb-38f1f2abed65",
+	  "name": "BoxMessages",
+    "content": {
+        "id": "ROLL03-NOTE-AUD-500",
+        "name": "ROLL03",
+        "description": "Note RecyclerROLL03",
+        "contentAt": "2021-10-18T07:49:01.878",
+        "contentAtUtc": "2021-10-17T20:49:01.878Z",
+        "value": {
+            "currency": "AUD",
+            "denomination": 5,
+            "decimals": 2,
+            "quantity": 61,
+            "mediaType": "NOTE",
+            "value": 5,
+            "total": 305
+        },
+        "vendorDependentFields": {
+            "MESSAGE_SEQUENCE": 2437214,
+            "LINE_NUMBER": 506
+        }
+	}	
+	}
+
+  
+  
+]

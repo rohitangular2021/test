@@ -1,0 +1,31 @@
+<div class="container" >
+<div class="body df">
+    <div class="left">
+        <mat-card class="example-card">
+            <mat-card-title style="text-align:center;color: brown;"><mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon> Settings</mat-card-title>
+            <mat-card-content style=" padding-top: 10px;">
+                <hr>
+                <button style="width: 100%;" (click)="changeView = 'account'" mat-raised-button>Profile Settings</button>
+                <hr>
+                <button style="width: 100%;" (click)="changeView = 'privacy'" mat-raised-button>Password Settings</button>
+                <hr>
+                <button style="width: 100%;" (click)="changeView = 'security'" mat-raised-button>Security Settings</button>
+                <hr>
+                <button style="width: 100%;" (click)="changeView = 'UI'" mat-raised-button>UI Settings</button>
+                <hr>
+                <button style="width: 100%;" (click)="changeView = 'notification'" mat-raised-button>Notification Settings</button>
+                <hr>
+            </mat-card-content>
+          </mat-card>
+    </div>     
+    <div class="right">
+        <div [ngSwitch]="changeView">
+            <div *ngSwitchCase="'account'"><app-account-settings></app-account-settings></div>
+            <div *ngSwitchCase="'privacy'"><app-privacy-settings></app-privacy-settings></div>
+            <div *ngSwitchCase="'security'"><app-security-settings></app-security-settings></div>
+            <div *ngSwitchCase="'notification'"><app-notification-settings></app-notification-settings></div>
+            <div *ngSwitchCase="'UI'"><app-ui-settings></app-ui-settings></div>
+        </div>
+    </div>
+</div>
+</div>

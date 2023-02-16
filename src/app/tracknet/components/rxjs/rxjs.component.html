@@ -1,0 +1,136 @@
+<div class="df">
+  <section class="card">
+    <div class="example-label" style="color: blue;font-weight: 700;">Rxjs Operators working (onclick):</div>
+    <div class="example-button-row">
+      <button mat-button (click)="isShow = 'extras'" [ngStyle]="{color:btnActive == 'extras'?'red':''}">Extras</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'tap'?'red':''}" (click)="tapObservable()">Tap()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'take'?'red':''}" (click)="takeObservable()">Take()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'observable'?'red':''}"
+        (click)="observableFn()">Observable</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'subscription'?'red':''}"
+        (click)="subscriptionFn()">Subscription()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'subjects'?'red':''}" (click)="subjectFn()">Subjects()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'scheduler'?'red':''}"
+        (click)="SchedulerFn()">Scheduler()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'switchMap'?'red':''}" (click)="switchMap()">SwitchMap() & map()
+        & switchAll()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'exaustMap'?'red':''}"
+        (click)="exaustMap()">ExaustMap()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'mergeConcatMap'?'red':''}"
+        (click)="mergeConcatMap()">mergeMap() & concatmap()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'pluck'?'red':''}" (click)="pluck()">pluck() &
+        catchError()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'map'?'red':''}" (click)="map()">map()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'combineLatest'?'red':''}"
+        (click)="combineLatest()">combinelatest()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'forkJoin'?'red':''}" (click)="forkJoin()">forkJoin()</button>
+      <button mat-button [ngStyle]="{color:btnActive == 'fromAndOf'?'red':''}" (click)="fromAndOf()">of() and
+        From()</button>
+        <button mat-button [ngStyle]="{color:btnActive == 'merge'?'red':''}" (click)="merge()">Merge()</button>
+    </div>
+
+    <div [ngSwitch]="isShow">
+      <div *ngSwitchCase=" 'forAll'" style="max-height: 400px;overflow:auto;border: 1px solid;margin-right: 5px;">
+        <span style="color: gray;">check Console for better undestanding</span>
+        <br>
+        <span>Array : [1, 2, 3, 4, 5, 6, 7, 8]</span>
+        <div *ngFor="let a of rxjsoperator">
+          <li>{{a}}</li>
+        </div>
+
+        <div *ngIf="btnActive=='map'">
+          <span>Array is ittrated using async pipe</span>
+          <div *ngFor="let a of abc$ | async; index as i ">
+            <li>{{a}}</li>
+          </div>
+        </div>
+
+        <div *ngIf="btnActive=='fromAndOf'">
+
+          <h4 style="color:red;">of() operator can behave as from() operator with spread operator</h4>
+          <div>
+            <span style="color: blue;">using of() operator</span><br>
+            [1, 2, 3, 4, 5, 6, 7, 8]
+          </div>
+
+          <div>
+            <span style="color: blue;">using from() operator</span>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+          </div>
+        </div>
+
+
+      </div>
+      <div *ngSwitchCase="'extras'" style="max-height: 250px;overflow:auto;margin-top: 20px;">
+        <mat-form-field>
+          <input matInput #input id="search1" placeholder="Search" autocomplete="off">
+        </mat-form-field>
+        <input matInput [value]="sMap?.data?.length" placeholder="Search" autocomplete="off">
+      </div>
+    </div>
+   <div>
+    <div style="border-bottom: 1px solid;">
+      <h4 style="color: green;border-bottom: 1px solid green;">Difference b/w mergemap,switchmap,concatmap</h4>
+    <p>Use mergeMap if you simply want to flatten the data into one Observable, use switchMap if you need to flatten the
+      data into one Observable but only need the latest value and use concatMap if you need to flatten the data into one
+      Observable and the order is important to you.</p>  
+    </div>
+    <hr>
+
+    <div style="border-bottom: 1px solid;">
+      <h4 style="color: green;border-bottom: 1px solid green;">forkjoin() and combineLatest() </h4>
+    <p>forkJoin - When all observables complete, emit the last emitted value from each.
+      Observable and the order is important to you.
+  </p>  
+  <p>combineLatest - When any observable emits a value, emit the latest value from each.
+    Usage is pretty similar, but you shouldn't forget to unsubscribe from combineLatest unlike forkJoin.
+</p>   
+    </div>
+    <hr>
+
+   </div>
+  </section>
+  <section class="card">
+    <div class="example-label" style="color: blue;font-weight: 700;margin-bottom: 20px;">Rxjs Operators Documentation:
+    </div>
+    <div class="user-search">
+      <input #search type="text" class="usersearch" [(ngModel)]="searchKey" placeholder="Search Rxjs operator Name" />
+      <span>
+        <button *ngIf="searchKey==''" matSuffix mat-icon-button style="right: 36px;">
+          <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;">search</mat-icon>
+        </button>
+      </span>
+      <span>
+        <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" style="right: 36px;">
+          <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;" (click)="clearSearch()">clear</mat-icon>
+        </button>
+      </span>
+    </div>
+    <div class="card-scroll">
+      <div *ngFor="let rxjs of rxjsOperators | searchOperator:searchKey; let i= index">
+        <mat-card class="example-card">
+          <mat-card-title>{{rxjs.title}}</mat-card-title>
+          <mat-card-content>
+            <p>{{rxjs.description}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button (click)="like(i)" mat-button>
+              <mat-icon>sports_score</mat-icon>
+              <i style="color: green;">Like</i> &nbsp;
+
+              <i style="color: red;">{{rxjs.likeCount == 0 ? ' ': rxjs.likeCount}}</i>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+</div>
