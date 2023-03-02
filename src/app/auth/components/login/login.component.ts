@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   startSubject$: Subject<number> = new Subject();
   subscription$: Subscription = new Subscription();
   otpFromApi: number
+  type:boolean = true
+  
   adminData: any
   constructor(
     private _store: Store<any>,

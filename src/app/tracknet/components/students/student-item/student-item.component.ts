@@ -21,7 +21,7 @@ export class StudentItemComponent implements OnInit {
   @Output() student = new EventEmitter<any>();
   @Output() delStudent = new EventEmitter<any>();
 
-  displayedColumns = ['Student_Id', 'Name', 'Email', 'Phone', 'classTeacher', 'actions'];
+  displayedColumns = ['Student_Id','image',  'Name', 'Email', 'Phone', 'actions'];
   dataSource:MatTableDataSource<any>; ;
   subscriptions$: Subscription = new Subscription();
   @Input() students: any[]

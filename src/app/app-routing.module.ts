@@ -12,7 +12,12 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () =>
-      import("../app/auth/auth.module").then((m) => m.AuthModule),
+    import("../app/homesite/homesite.module").then((m) => m.HomesiteModule),
+  },
+  {
+    path: "home",
+    loadChildren: () =>
+      import("../app/homesite/homesite.module").then((m) => m.HomesiteModule),
   },
   {
     path: "tracknet",

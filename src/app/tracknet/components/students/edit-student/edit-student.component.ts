@@ -40,6 +40,9 @@ export class EditStudentComponent implements OnInit {
     let myArray = text.split(",")
     this.student.subjects = myArray
 
+    console.log(this.student);
+    
+
   }
 
 

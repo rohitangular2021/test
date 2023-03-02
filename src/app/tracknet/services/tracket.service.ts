@@ -85,6 +85,11 @@ export class TracketService {
     return this.service.callService('post', data, path)
   }
 
+  uploadImageUser(data){
+    let path = `${this.url}api/uploadImage/user`
+    return this.service.callService('post', data, path)
+  }
+
   getSettings() {
     let path = `http://localhost:3000/api/settings`
     return this.http.get(path)

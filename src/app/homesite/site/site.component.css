@@ -1,0 +1,47 @@
+.home-container {
+  height: 100vh;
+  /* font-family: "Inconsolata", sans-serif; */
+  width: 100vw;
+  overflow: auto;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.news {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.img {
+  max-width: 40%;
+}
+
+.head {
+  display: flex;
+  height: 10%;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0px 31px 8px 46px;
+  background-color: #03a9f4;
+  color: black;
+  align-items: center;
+}
+
+.newsbody {
+  text-align: left;
+}
+
+.footer {
+  text-align: center;
+  justify-content: center;
+  background-color: black;
+  color: aliceblue;
+  padding: 20px;
+}
+
+.marginbtn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

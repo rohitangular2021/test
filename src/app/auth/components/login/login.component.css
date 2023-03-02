@@ -9,6 +9,13 @@
   button:hover {
     opacity: 0.7;
   }
+  .field{
+    position: relative;
+  }
+
+  .fld{
+    position: absolute;right: 0px;cursor: pointer;top: 10px;font-size: 16px;
+  }
   
   .imgcontainer {
     text-align: center;

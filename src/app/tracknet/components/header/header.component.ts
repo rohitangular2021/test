@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   logout()
   {
     localStorage.removeItem('rohitapp')
-    this.router.navigate([""])
+    this.router.navigate(["auth"])
   }
 
   sidenavToggle() {
