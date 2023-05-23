@@ -3,7 +3,7 @@
     <app-header [isExpand] = "isExpanded" (fullScreenobj)="fullScreen($event)" (showSidenav)=maxminSide($event)></app-header>
   </div>
  <div>
-  <div class="example-container" autosize>  
+  <div class="example-container">  
     <div style="border-right: 1px solid darkgray;" [ngStyle]="{width:isExpanded ?'':'auto'}">
       <app-sidenav [isExpanded]= "isExpanded"></app-sidenav>
     </div>

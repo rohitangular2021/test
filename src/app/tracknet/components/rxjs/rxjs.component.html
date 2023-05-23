@@ -64,15 +64,15 @@
             <li>7</li>
             <li>8</li>
           </div>
-        </div>
+        </div> 
 
 
       </div>
       <div *ngSwitchCase="'extras'" style="max-height: 250px;overflow:auto;margin-top: 20px;">
         <mat-form-field>
-          <input matInput #input id="search1" placeholder="Search" autocomplete="off">
+          <input matInput #input id="search1" (keyup)="updateSearch($event)" placeholder="Search students" autocomplete="off">
         </mat-form-field>
-        <input matInput [value]="sMap?.data?.length" placeholder="Search" autocomplete="off">
+        <input matInput disabled="" [value]="sMap?.data | json" placeholder="Search" autocomplete="off">
       </div>
     </div>
    <div>

@@ -1,7 +1,7 @@
 
 export interface UserState {
   isSpinner?: null | undefined | boolean;
-  users?: null | undefined | any[];
+  users?: null | undefined | any;
   error?: null | undefined | string;
   totalCount?: null | undefined | number;
 }

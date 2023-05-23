@@ -14,6 +14,8 @@ export class RxjsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('input', { static: false }) input: ElementRef;
   isShow: string = 'extras'
+  searchString: Subject<string> = new Subject();
+  searchString$: Observable<string> = this.searchString.asObservable();
   data1: any = []
   rxjsoperator: any = []
   rxjsOperators: any = []
@@ -26,21 +28,30 @@ export class RxjsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { }
 
   ngAfterViewInit() {
+    // fromEvent(this.input.nativeElement, 'keyup')
+    //   .pipe(
+    //     debounceTime(500),
+    //     distinctUntilChanged(),
+    //     switchMap(() => {
+    //       return this.service.getStudentsfilter(this.input.nativeElement.value)
+    //     }),
+    //   )
+    //   .subscribe(val => { this.sMap = val });
 
-    fromEvent(this.input.nativeElement, 'keyup')
-      .pipe(
-        filter(Boolean),
-        debounceTime(150),
-        tap(async (event: KeyboardEvent) => {
-          // console.log(`The input value is ${this.input.nativeElement.value}`);
-        }),
-        distinctUntilChanged(),
-        switchMap(() => {
-          return this.service.getStudentsfilter(this.input.nativeElement.value)
-        }),
-      )
-      .subscribe(val => { this.sMap = val });
+    this.searchString$.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(() => {
+        return this.service.getStudentsfilter(this.input.nativeElement.value)
+      }),
+    )
+    .subscribe(val => { this.sMap = val
+    })
 
+  }
+
+  updateSearch(event) {
+    this.searchString.next(event.target.value)
   }
 
   like(index) {
@@ -246,18 +257,18 @@ export class RxjsComponent implements OnInit, AfterViewInit {
     this.btnActive = "pluck"
     const source = from([
       {
-        data:{ name: 'Joe', age: 30, job: { title: 'Developer', language: 'JavaScript' } },
-        msg:'pluck',
-        status:200,
-        error:null
+        data: { name: 'Joe', age: 30, job: { title: 'Developer', language: 'JavaScript' } },
+        msg: 'pluck',
+        status: 200,
+        error: null
       }
-      
+
     ]);
 
     let pqr = await source.pipe(
-    pluck('data'),
-    shareReplay(1),tap(item=>{console.log(item);}),
-    catchError(async err => {console.log(err)})).toPromise()
+      pluck('data'),
+      shareReplay(1), tap(item => { console.log(item); }),
+      catchError(async err => { console.log(err) })).toPromise()
     console.log(pqr);
   }
 
@@ -292,31 +303,31 @@ export class RxjsComponent implements OnInit, AfterViewInit {
       .subscribe(res => {
         let data = res;
         console.log('User and Post', res);
-      });      
+      });
   }
 
-  fromAndOf(){
+  fromAndOf() {
     this.isShow = "forAll"
     this.btnActive = "fromAndOf"
     let data = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    of(data).subscribe(item=>{
-      console.log(item);     
+    of(data).subscribe(item => {
+      console.log(item);
     })
 
-    from(data).subscribe(item=>{
-      console.log(item);     
+    from(data).subscribe(item => {
+      console.log(item);
     })
 
-    of(...data).subscribe(item=>{
-      console.log(item);     
+    of(...data).subscribe(item => {
+      console.log(item);
     })
 
   }
 
-  merge(){
+  merge() {
 
-    let  hello: any = [{
+    let hello: any = [{
       author: 'bot',
       suggestedActions: [{
         type: 'reply',
@@ -328,14 +339,14 @@ export class RxjsComponent implements OnInit, AfterViewInit {
       timestamp: new Date(),
       text: 'Hey, This is AdGo Virtual Underwriter. How can I help you today ?'
     }]
-    
 
-    let abc = merge(from(hello),from(hello),from(hello)).pipe(scan((acc,  x) => console.log(acc,x)
+
+    let abc = merge(from(hello), from(hello), from(hello)).pipe(scan((acc, x) => console.log(acc, x)
     ))
 
     // abc.subscribe(data=>{console.log(data);
     // })
-    
+
   }
 
 }

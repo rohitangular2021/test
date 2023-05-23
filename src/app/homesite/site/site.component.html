@@ -2,12 +2,17 @@
     <div class="head">
         <p class="w3-jumbo"> Daily News</p>
         <div>
+            <button mat-button style="cursor: pointer;"  (click)="Shop()">
+                <b>{{ "Shop" }}</b>
+            </button>
+
             <button mat-button style="cursor: pointer;"  (click)="login()">
                 <b>{{ "Login" }}</b>
             </button>
-            <button style="cursor: pointer;" mat-button (click)="signUp()">
+            <!-- <button style="cursor: pointer;" mat-button (click)="signUp()">
                 <b>{{ "Sign Up" }}</b>
-            </button>
+            </button> -->
+            <input type="text" #search matInput placeholder="search">
         </div>
     </div>
 

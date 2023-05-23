@@ -31,6 +31,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/custom-theme.scss",
               "src/styles.css",
               "src/common.css"
@@ -115,6 +116,5 @@
         }
       }
     }
-  },
-  "defaultProject": "my-app"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AppService } from 'src/app/app.service';
 import { TracketService } from '../../../services/tracket.service';
@@ -11,8 +11,8 @@ import { TracketService } from '../../../services/tracket.service';
 })
 export class AddUserComponent implements OnInit {
   @Output() userData = new EventEmitter<any>();
-  formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  formGroup: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder,
     private service: TracketService,
     public matDialog:MatDialogRef<AddUserComponent>,
     private appService: AppService) { }

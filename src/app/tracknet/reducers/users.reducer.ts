@@ -38,6 +38,32 @@ export function usersReducer(
       };
     }
 
+    case UsersActionTypes.LOADMORE_USERS_ACTION: {
+      return {
+        ...state,
+        isSpinner: true,
+        error: null,
+      };
+    }
+    case UsersActionTypes.LOADMORE_USERS_SUCCESS_ACTION: {
+      let oldData = state.users.data
+      let newData =oldData.concat(action.payload.data)
+      action.payload.data = newData
+      return {
+        ...state,
+        isSpinner: false,
+        error: null,
+        users: action.payload
+      };
+    }
+    case UsersActionTypes.LOADMORE_USERS_FAILED_ACTION: {
+      return {
+        ...state,
+        isSpinner: false,
+        error: action.payload,
+      };
+    }
+
     default:
       return state;
   }

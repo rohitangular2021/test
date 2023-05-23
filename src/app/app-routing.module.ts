@@ -15,13 +15,18 @@ const routes: Routes = [
     import("../app/homesite/homesite.module").then((m) => m.HomesiteModule),
   },
   {
+    path: "shoping",
+    loadChildren: () =>
+    import("../app/shoping/shoping.module").then((m) => m.ShopingModule),
+  },
+  {
     path: "home",
     loadChildren: () =>
       import("../app/homesite/homesite.module").then((m) => m.HomesiteModule),
   },
   {
     path: "tracknet",
-    canActivate:[AuthGuard], 
+    // canActivate:[AuthGuard], 
     loadChildren: () =>
       import("../app/tracknet/tracknet.module").then((m) => m.TracknetModule),
   },

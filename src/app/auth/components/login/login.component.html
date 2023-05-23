@@ -84,10 +84,10 @@
         </div>
         <div style="margin-bottom: 5px;">
           <div class="field">
-            <input matInput  [type]="type ?'password':'text'" min="0" autocomplete="off" placeholder="{{ 'Enter Password' }}"
-              [(ngModel)]="password" name="password" id="password" required />
-        <mat-icon (click)="type = !type" class="fld" aria-hidden="false" aria-label="Example home icon" fontIcon="key">
-          {{type ?'visibility':'visibility_off'}}</mat-icon>
+            <input matInput [type]="type ?'password':'text'" min="0" autocomplete="off"
+              placeholder="{{ 'Enter Password' }}" [(ngModel)]="password" name="password" id="password" required />
+            <mat-icon (click)="type = !type" class="fld">
+              {{type ?'visibility':'visibility_off'}}</mat-icon>
           </div>
         </div>
         <button style="width: 100%;" name="login" type="submit" color="primary" mat-raised-button

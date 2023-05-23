@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { AppService } from 'src/app/app.service';
 import { TracketService } from 'src/app/tracknet/services/tracket.service';
 
@@ -13,7 +13,7 @@ export class EditStudentComponent implements OnInit {
   @Input() student: any
   @Output() gobackbtn = new EventEmitter<any>()
   @ViewChild("changeLogo") changeLogo: any;
-  formGroup: FormGroup
+  formGroup: UntypedFormGroup
   imageUrl: any;
   selectedValues
   subjects: any[] = [
@@ -32,7 +32,7 @@ export class EditStudentComponent implements OnInit {
   ];
 
   constructor(private service: TracketService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private appService: AppService, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {

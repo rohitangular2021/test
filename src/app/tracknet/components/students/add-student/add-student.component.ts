@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AppService } from 'src/app/app.service';
 import { TracketService } from 'src/app/tracknet/services/tracket.service';
@@ -24,7 +24,7 @@ export class AddStudentComponent implements OnInit {
     { value: '7', viewValue: '7th' }, { value: '8', viewValue: '8th' },
     { value: '9', viewValue: '9th' }, { value: '10', viewValue: '10th' },
   ];
-  formGroup: FormGroup
+  formGroup: UntypedFormGroup
   imageUrl: any;
   csv: any;
   selectedValues
@@ -32,7 +32,7 @@ export class AddStudentComponent implements OnInit {
   @ViewChild("changeLogo") changeLogo: any;
   @ViewChild("uploadCsv") uploadCsv: any;
   constructor(private service: TracketService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     public matDialog: MatDialogRef<AddUserComponent>,
     private appService: AppService, private cd: ChangeDetectorRef) { }
 

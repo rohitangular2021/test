@@ -1,10 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { debounceTime, fromEvent, map, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, fromEvent, map, observable, Observable, Subscription, switchMap, tap } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import { ConfirmDialogboxComponent } from 'src/app/shared/components/confirm-dialogbox/confirm-dialogbox.component';
-import { FetchUsersAction } from '../../actions/tracknet.users.actions';
+import { FetchUsersAction, LoadMoreActionUser } from '../../actions/tracknet.users.actions';
 import { UsersSelector } from '../../reducers/users.selector';
 import { TracketService } from '../../services/tracket.service';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -15,17 +15,18 @@ import { AngularCsv } from 'angular7-csv/dist/Angular-csv'
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, AfterViewInit {
 
   subscriptions$: Subscription = new Subscription();
   users: any[]
-  @ViewChild("scroll", { static: false }) scroll: ElementRef;
-  scrollEvent1$: Subscription;
   selectedUsers: any[] = []
   scrollTop: number = 0;
   totalCount: number = 0;
   searchKey: any = ''
   isSpinner: boolean = true
+  offSet:number= 0
+  @ViewChild("scroll", { static: false }) scroll: ElementRef;
+  scrollEvent$: Subscription = new Subscription()
   constructor(private store: Store, private service: TracketService,
     private appService: AppService,
     public dialog: MatDialog) { }
@@ -46,39 +47,41 @@ export class UsersComponent implements OnInit {
 
   }
 
-  ngAfterViewInit() {
-    // this.scroll.nativeElement.style.height = `calc(100vh - 116px)`;
-    // let offsetHeight = this.scroll.nativeElement.offsetHeight;
-    // this.subscriptions$.add(
-    //   (this.scrollEvent1$ = fromEvent(this.scroll.nativeElement, "scroll")
-    //     .pipe(
-    //       debounceTime(500),
-    //       map((e: any) => {
-    //         return {
-    //           scrollTop: e.srcElement.scrollTop,
-    //           scrollHeight: e.srcElement.scrollHeight,
-    //         };
-    //       })
-    //       // pairwise()
-    //     )
-    //     .subscribe((e: any) => {
-    //       if (this.scrollTop <= e.scrollTop) {
-    //         const scrollPercent = Math.round(
-    //           (e.scrollTop / (e.scrollHeight - offsetHeight)) * 100
-    //         );
-    //         if (scrollPercent > 50) {
-    //           let offSet = 0;
-    //           offSet = Math.floor(this.users.length / 10);
-    //           console.log(offSet);
-    //         }
-    //         this.scrollTop = e.scrollTop;
-    //       }
-    //     }))
-    // );
+  ngAfterViewInit(): void {
+    // onscroll loadmore items 
+    this.scroll.nativeElement.style.height = `calc(100vh - ${document["viewType"] == "web" ? 155 : 120
+      }px)`;
+    this.scrollEvent$ = fromEvent(this.scroll.nativeElement, "scroll")
+      .pipe(
+        debounceTime(500),
+        map((e: any) => {
+          return {
+            scrollTop: e.srcElement.scrollTop,
+            scrollHeight: e.srcElement.scrollHeight,
+          }
+        })
+      ).subscribe((e: any) => {
+        if (this.scrollTop <= e.scrollTop) {
+          const scrollPercent = Math.round(
+            (e.scrollTop / e.scrollHeight) * 100
+          );
+          if (scrollPercent > 50) {
+            this.offSet = Math.floor(this.users.length / 10)
+            this.store.dispatch(new LoadMoreActionUser({offSet: this.offSet}))
+          }
+          this.scrollTop = e.scrollTop;
+        }
+      })
+    // onscroll loadmore items end
+  }
+
+  loadMore(){
+    this.offSet= this.offSet+1
+    this.store.dispatch(new LoadMoreActionUser({offSet: this.offSet}))
   }
 
   trackByFn(index, item) {
-    return item.name // or item.id
+    return item.id // or item.id
   }
 
   userChecked(event: any) {

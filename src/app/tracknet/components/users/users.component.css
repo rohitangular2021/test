@@ -1,10 +1,8 @@
-.container {
-  overflow-y: auto;
+.item-view {
+  height: calc(100vh - 170px) !important;
   overflow-x: hidden;
-  height: 100%;
-  width: 100%;
+  overflow-y: auto;
 }
-
 .header {
   height: 55px;
   display: flex;

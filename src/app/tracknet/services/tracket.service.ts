@@ -15,8 +15,16 @@ export class TracketService {
     ["CancellationReason", ""],
   ])
 
-  getUsers() {
-    let path = `${this.url}users`
+  getUsers(payload?) {
+    let path = ''
+    if(payload){
+      let offset = payload.offSet
+     path = `${this.url}users?offset=${offset}`
+    }
+    else{
+      path= `${this.url}users`
+    }
+    
     return this.http.get(path)
   }
 

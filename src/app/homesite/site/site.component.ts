@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { debounceTime, from, fromEvent, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-site',
@@ -7,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./site.component.css']
 })
 export class SiteComponent implements OnInit {
-
+  @ViewChild("search", { static: false }) search: ElementRef;
   constructor(private _router:Router) { }
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
   }
 
   signUp() {
@@ -20,5 +21,10 @@ export class SiteComponent implements OnInit {
   login(){
     this._router.navigate(["auth/login"]);
   }
+
+  Shop(){
+    this._router.navigate(["shoping"]);
+  }
+  
 
 }

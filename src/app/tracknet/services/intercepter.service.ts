@@ -35,7 +35,7 @@ export class IntercepterService {
               localStorage.removeItem('mobile')
               localStorage.removeItem('id')
               this.appService.openSnackBar('Session Expired ! Login Again',5000)
-              this.router.navigate(['/auth']);          
+              this.router.navigate(['/auth'],{ queryParams: { returnUrl: this.router.routerState.snapshot.url }});          
             } 
             return throwError(err); 
           } 
@@ -47,6 +47,8 @@ export class IntercepterService {
       );
     }
     else {
+      this.appService.openSnackBar('Please login to continue ! Login Again',5000)
+      this.router.navigate(['/auth'],{ queryParams: { returnUrl: this.router.routerState.snapshot.url }});
       return next.handle(req);
     }
   }

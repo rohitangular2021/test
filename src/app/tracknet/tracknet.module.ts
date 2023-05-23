@@ -45,6 +45,7 @@ import { UiSettingsComponent } from './components/settings/ui-settings/ui-settin
 import { SecuritySettingsComponent } from './components/settings/security-settings/security-settings.component';
 import { NotificationSettingsComponent } from './components/settings/notification-settings/notification-settings.component';
 import { SettingsEffects } from './effects/tracknet.settings.effects';
+import { ResizableDirective } from './directives/resizable.directive';
 import { AssignmentComponent } from './components/assignment/assignment.component';
 
 @NgModule({
@@ -60,8 +61,8 @@ import { AssignmentComponent } from './components/assignment/assignment.componen
     AddUserComponent, EditUserComponent, DashboardCardComponent,
     StudentsComponent, StudentItemComponent, AddStudentComponent,
     EditStudentComponent,
-    ShareStudentComponent,
-    ViewStudentComponent, ProfileComponent, MapComponent, BulkuploadstudentsComponent, ChatappComponent, RxjsComponent, SettingsComponent, AccountSettingsComponent, PrivacySettingsComponent, UiSettingsComponent, SecuritySettingsComponent, NotificationSettingsComponent, AssignmentComponent,
+    ShareStudentComponent,AssignmentComponent,
+    ViewStudentComponent, ProfileComponent, MapComponent, BulkuploadstudentsComponent, ChatappComponent, RxjsComponent, SettingsComponent, AccountSettingsComponent, PrivacySettingsComponent, UiSettingsComponent, SecuritySettingsComponent, NotificationSettingsComponent, ResizableDirective
   ],
   imports: [
     CommonModule, RouterModule, MaterialModule, TracknetRoutingModule, FormsModule, ReactiveFormsModule,
@@ -70,3 +71,4 @@ import { AssignmentComponent } from './components/assignment/assignment.componen
   providers: [TracketService, AppService, LeafletMapService, ScriptLoaderService, ChatService]
 })
 export class TracknetModule { }
+ 

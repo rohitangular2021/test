@@ -11,10 +11,7 @@
       <span class="pc" style="font-size: 12px;margin-left: 20px;">
         {{users?.length}} Order out of {{users?.length}}</span>
       <div class="user-search">
-        <input #search type="text" 
-        class="usersearch" 
-        [(ngModel)]="searchKey" 
-        placeholder="Search User Name"/>
+        <input #search type="text" class="usersearch" [(ngModel)]="searchKey" placeholder="Search User Name" />
         <span>
           <button *ngIf="searchKey==''" matSuffix mat-icon-button style="right: 0px; bottom: -5px;position: absolute;">
             <mat-icon class="pc" style=" font-size: 20px;padding-bottom: 15px;">search</mat-icon>
@@ -44,11 +41,7 @@
       </div>
     </div>
   </div>
-  <mat-progress-bar
-  *ngIf="isSpinner"
-  style="height: 3px; z-index: 10"
-  mode="query"
-></mat-progress-bar>
+  <mat-progress-bar *ngIf="isSpinner" style="height: 3px; z-index: 10" mode="query"></mat-progress-bar>
   <div class="content" style="padding-left: 10px;">
     <div class="heading">
       <div class="headid" style="flex: 1 1 10%;">
@@ -58,24 +51,30 @@
         <span>ID</span>
       </div>
       <div class="head" style="flex: 1 1 15%">
-        <span>Email</span></div>
+        <span>Email</span>
+      </div>
       <div class="head" style="flex: 1 1 15%;">
-        <span>Phone</span></div>
+        <span>Phone</span>
+      </div>
       <div class="head" style="flex: 1 1 15%">
-        <span>Address</span></div>
-        <div class="head" style="flex: 1 1 15%">
-          <span>Role</span></div>
+        <span>Address</span>
+      </div>
+      <div class="head" style="flex: 1 1 15%">
+        <span>Role</span>
+      </div>
       <div class="head" *ngIf="(selectedUsers.length < 2)" style="flex: 1 1 15%;">
-        <span>Action</span></div>
+        <span>Action</span>
+      </div>
     </div>
-    <div #scroll class="items" *ngFor="let item of users | searchUser : searchKey; trackBy: trackByFn
-  ">
-      <app-user-item [userdata]="item"
-      [selectedUsers]="selectedUsers"
-      (checked)="userChecked($event)"
-      (users)="loadUsers($event)"
-      ></app-user-item>
+    <div #scroll class="item-view custom-scroll">
+    <div *ngFor="let item of users | searchUser : searchKey; trackBy: trackByFn">
+      <app-user-item [userdata]="item" [selectedUsers]="selectedUsers" (checked)="userChecked($event)"
+        (users)="loadUsers($event)"></app-user-item>
     </div>
+    <button mat-button style="color: white; background-color: #0086da;" (click)="loadMore()" matTooltip="loadMore">
+     load More
+    </button>
   </div>
-
+  </div>
+  
 </div>
